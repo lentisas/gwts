@@ -23,14 +23,17 @@
         </li>
         <li class="has-sub">
           <a href="javascript:;" class="">
-          <i class="icon-bookmark-empty"></i> UI Features
+          <i class="icon-bookmark-empty"></i> Source Certificates
           <span class="arrow"></span>
           </a>
           <ul class="sub">
-            <li><a class="" href="ui_general.html">General</a></li>
-            <li><a class="" href="ui_buttons.html">Buttons</a></li>
-            <li><a class="" href="ui_tabs_accordions.html">Tabs & Accordions</a></li>
-            <li><a class="" href="ui_typography.html">Typography</a></li>
+            <li><a class="" href="#TIF">TIF</a></li>
+            <li><a class="" href="<?php echo URL::to_route('lmcc_view');?>">LMCC</a></li>
+            <li><a class="" href="#">ILMCC</a></li>
+            <li><a class="" href="#">LTC</a></li>
+            <li><a class="" href="#">Remeasurement</a></li>
+            <li><a class="" href="#">Mill Processing</a></li>
+            <li><a class="" href="#">Inspection Certificates</a></li>
           </ul>
         </li>
         <li class="has-sub">
