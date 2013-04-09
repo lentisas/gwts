@@ -135,10 +135,14 @@ class Company extends Eloquent{
 			if(array_key_exists("code", $client_data))
 				$filter_array["companies.code"] = "%".$client_data["code"]."%";
 
+			if(array_key_exists("type", $client_data) && $client_data["type"] == "contractors")
+				$filter_array["company_types.id"] = 1;
+
 			$query_result = DB::table('companies')
 								->join('company_types','companies.company_type_id','=','company_types.id')
 								->where(function($query) use ($filter_array){				
 									$query = DataHelper::filter_data($query,"companies.id",$filter_array,"int");
+									$query = DataHelper::filter_data($query,"company_types.id",$filter_array,"int");
 									$query = DataHelper::filter_data($query,"companies.name",$filter_array,"string","like");
 									$query = DataHelper::filter_data($query,"companies.code",$filter_array,"string","like");	
 			});
