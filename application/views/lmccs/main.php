@@ -1,4 +1,4 @@
-<script type="text/javascript" src="js/app/controllers/lmcccontroller.js"></script>
+<?php echo HTML::script("js/app/controllers/lmcccontroller.js"); ?>
 <div class="container-fluid" ng-controller="LMCCController">
   <h3 class="page-title">
     LMCC Entry Form<small></small>
@@ -87,6 +87,6 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>

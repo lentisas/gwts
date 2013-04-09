@@ -1,7 +1,14 @@
-<div class="span12">
+<div class="container-fluid" ng-controller="LMCCController">
+	<h3 class="page-title">
+	LMCC
+	<small>[ List by date ]</small>
+	<hr>
+	</h3>
+</div>
+<div class="span8">
 	<div class="portlet box light-grey">
 		<div class="portlet-title">
-			<h4><i class="icon-reorder"></i>Managed Table</h4>
+			<h4><i class="icon-reorder"></i>LMCC</h4>
 			<div class="tools">
 				<a class="collapse" href="javascript:;"></a>
 				<a class="config" data-toggle="modal" href="#portlet-config"></a>
@@ -15,21 +22,15 @@
 					<table id="sample_1" class="table table-striped table-bordered dataTable" aria-describedby="sample_1_info">
 						<thead>
 							<tr role="row">
-								<th style="width: 24px;" class="sorting_disabled" role="columnheader" rowspan="1" colspan="1">
-								<div class="checker" id="uniform-undefined">
-									<span><input type="checkbox" data-set="#sample_1 .checkboxes" class="group-checkable" style="opacity: 0;"></span>
-								</div>
-							</th>
-							<th class="sorting" role="columnheader" tabindex="0" rowspan="1" colspan="1" style="width: 276px;">Username</th>
-							<th class="hidden-phone sorting" style="width: 487px;">Email</th>
-							<th class="hidden-phone sorting" style="width: 187px;">Points</th>
-							<th class="hidden-phone sorting" style="width: 268px;">Joined</th>
-							<th class="hidden-phone sorting" style="width: 268px;"></th></tr>
+								<th class="sorting" role="columnheader" tabindex="0" rowspan="1" colspan="1" style="width: 276px;">Username</th>
+								<th class="hidden-phone sorting" style="width: 487px;">Email</th>
+								<th class="hidden-phone sorting" style="width: 187px;">Points</th>
+								<th class="hidden-phone sorting" style="width: 268px;">Joined</th>
+								<th class="hidden-phone sorting" style="width: 268px;"></th>
+							</tr>
 						</thead>
 						<tbody role="alert" aria-live="polite" aria-relevant="all">
 							<tr class="gradeX odd">
-								<td class="  sorting_1"><div class="checker" id="uniform-undefined"><span>
-									<input type="checkbox" value="1" class="checkboxes" style="opacity: 0;"></span></div></td>
 								<td class=" ">shuxer</td>
 								<td class="hidden-phone "><a href="mailto:shuxer@gmail.com">shuxer@gmail.com</a></td>
 								<td class="hidden-phone ">120</td>
@@ -37,7 +38,6 @@
 								<td class="hidden-phone "><span class="label label-success">Approved</span></td>
 							</tr>
 							<tr class="gradeX even">
-								<td class="  sorting_1"><div class="checker" id="uniform-undefined"><span><input type="checkbox" value="1" class="checkboxes" style="opacity: 0;"></span></div></td>
 								<td class=" ">looper</td>
 								<td class="hidden-phone "><a href="mailto:looper90@gmail.com">looper90@gmail.com</a></td>
 								<td class="hidden-phone ">120</td>

@@ -10,7 +10,7 @@
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
         <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-        <img src="img/menu-toggler.png" alt="" />
+        <img src="../img/menu-toggler.png" alt="" />
         </a>
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN TOP NAVIGATION MENU -->
@@ -18,7 +18,7 @@
           <!-- BEGIN USER LOGIN DROPDOWN -->
           <li class="dropdown user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img alt="" src="img/avatar1_small.jpg" />
+            <img alt="" src="../img/avatar1_small.jpg" />
             <span class="username">Sylva Vortia</span>
             <i class="icon-angle-down"></i>
             </a>

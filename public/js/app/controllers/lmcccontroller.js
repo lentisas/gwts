@@ -1,5 +1,5 @@
 function LMCCController ($scope, LMCC) {
-	
+
 
 	$scope.contractors= [
 		{id: 0, name: "John Bitar", propertyMark:'JCM' },
@@ -14,11 +14,14 @@ function LMCCController ($scope, LMCC) {
 	];
 
 
-	$scope.lmccLogs = [];
-
+	$scope.lmccs[
+		{contractor:'John Bitar'},
+		{date:'12 Jan 2012'},
+		{no_logs:4}
+	]
 
 	$scope.addNewLog = function () {
-		
+
 	}
 
 	$scope.addLog = function (log) {
