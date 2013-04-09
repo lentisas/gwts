@@ -15,13 +15,13 @@
 
       <!-- BEGIN SIDEBAR MENU -->
       <ul>
-        <li class="active">
+        <!-- <li class="active">
           <a href="#">
           <i class="icon-home"></i> Timber Contract
           <span class="selected"></span>
           </a>
-        </li>
-        <li class="has-sub">
+        </li> -->
+        <li class="has-sub active">
           <a href="javascript:;" class="">
           <i class="icon-bookmark-empty"></i> Source Certificates
           <span class="arrow"></span>
@@ -36,7 +36,7 @@
             <li><a class="" href="#">Inspection Certificates</a></li>
           </ul>
         </li>
-        <li class="has-sub">
+        <!-- <li class="has-sub">
           <a href="javascript:;" class="">
           <i class="icon-table"></i> Form Stuff
           <span class="arrow"></span>
@@ -84,7 +84,7 @@
             <li><a class="" href="extra_blank.html">Blank Page</a></li>
           </ul>
         </li>
-        <li><a class="" href="login.html"><i class="icon-user"></i> Login Page</a></li>
+        <li><a class="" href="login.html"><i class="icon-user"></i> Login Page</a></li> -->
       </ul>
       <!-- END SIDEBAR MENU -->
     </div>
