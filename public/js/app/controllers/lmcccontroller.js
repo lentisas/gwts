@@ -5,7 +5,7 @@ function LMCCController ($scope, LMCC, $http) {
 	$scope.lmccLogs = [];
 
 	function getContractors () {
-		$http.get('lmccs?type=contractors').success(function (res) {
+		$http.get('companies?type=contractors').success(function (res) {
 			$scope.contractors = res.data;
 		})
 	}
@@ -21,7 +21,11 @@ function LMCCController ($scope, LMCC, $http) {
 		//console.log("gets here");
 	}
 
-	$scope.back = function () {
+	$scope.back = function (log) {
+		//console.log(log);
+		var theLog = angular.copy(log);
+		theLog.id = $scope.lmccLogs.length;
+		$scope.lmccLogs.push(theLog);
 		$('#lmcc_tabs a:first').tab('show');
 	}
 
@@ -47,8 +51,32 @@ function LMCCController ($scope, LMCC, $http) {
 			grade:log.grade
 		}
 
-		$scope.lmccLogs.push(log);
+	$scope.lmccLogs.push(log);
+
+	$scope.saveLMCC = function () {
+		var lmcc = new LMCC($scope.newLMCC);
+		lmcc.logs = $scope.lmccLogs;
+		lmcc.$save(function (res) {
+			afterSave(res);
+		})
 	}
+
+	function afterSave(res,callback){
+        var msg = "";
+        if(res.success){
+            msg = res.message;
+            MSG.show(msg,"success");
+            $scope.newLMCC = {};
+            $scope.lmccLogs = [];
+            $scope.newLog = {};
+            //any other business
+            if(callback)
+                callback();
+        }else {
+            msg = res.message || "Sorry, errors were ecountered";
+            MSG.show(msg);
+        }
+    }
 
 	getContractors();
 	getForestDistricts();
