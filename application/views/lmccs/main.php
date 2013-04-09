@@ -4,7 +4,7 @@
     LMCC Entry Form<small></small>
     <hr>
   </h3>
-  <div class="span12" ng-controller="LMCCController">
+  <div class="span10" ng-controller="LMCCController">
     <div class="tabbable" id="lmcc_tabs">
       <ul class="nav nav-tabs tab_headers">
         <li class="active"><a href="#lmcc_form" data-toggle="tab"> Basic Information</a></li>
@@ -177,10 +177,6 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 7a7b55765dffa8af2622e67ebf1c8e2520ebfc9d
   </div>
 </div>
 
