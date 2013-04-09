@@ -1,17 +1,24 @@
-<script type="text/javascript" src="../js/app/controllers/lmcccontroller.js"></script>
+<script type="text/javascript" src="js/app/controllers/lmcccontroller.js"></script>
 <div class="container-fluid">
   <h3 class="page-title">
     LMCC Entry Form<small></small>
     <hr>
   </h3>
-  <div class="span12" ng-controller="LMCCController">
+  <div class="row-fluid" ng-controller="LMCCController">
     <div class="tabbable" id="lmcc_tabs">
-      <ul class="nav nav-tabs tab_headers">
+      <ul class="nav nav-tabs tab_headers" style="display:none">
         <li class="active"><a href="#lmcc_form" data-toggle="tab"> Basic Information</a></li>
         <li class=""><a href="#log_info" data-toggle="tab"> Log Details</a></li>
       </ul>
       <div class="tab-content">
         <div class="tab-pane form-horizontal active" id="lmcc_form">
+          <div class="control-group">
+            <div class="control-label">Reference Number:</div>
+            <div class="controls">
+              <input class="input-large" id="referenceNumber" type="text"
+                 ng-model="newLMCC.referenceNumber">
+            </div>
+          </div>
           <div class="control-group">
             <div class="control-label">Contractor:</div>
             <div class="controls">
@@ -80,10 +87,33 @@
           </div>
           <div class="control-group">
             <div class="controls">
-              <button class="btn btn-success" ng-click="addNewLog()">
-                <i class='icon-white icon-th'></i> Add Log</button>
+              <button class="btn" ng-click="addNewLog()">
+                <i class='icon-white icon-plus-sign'></i> Add Log</button>
+                <button class="btn btn-success" ng-click="saveLMCC()">
+                <i class='icon-white icon-ok'></i> Save LMCC</button>
             </div>
           </div>
+
+          <table class='table table-striped table-bordered ax_table'>
+            <thead>
+              <tr>
+                <th class="ax_grid_action1">#</th>
+                <th>Tree Number</th>
+                <th>Log Number</th>
+                <th class='ax_grid_action2'></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="log in lmccLogs">
+                <td> {{$index + 1}} </td>
+                <td> {{log.treeNumber}} </td>
+                <td> {{log.logNumber}} </td>
+                <td> 
+                    <a href="#"  ng-click="removeLog(log)"> <i class='icon icon-remove'> </a></i> 
+                </td>
+              </tr>
+            </tbody>
+        </table>
         </div>
         <div class="tab-pane form-horizontal" id="log_info">
           <div class="control-group">
@@ -170,7 +200,7 @@
 
           <div class="control-group">
             <div class="controls">
-              <button class="btn btn-success" ng-click="back()">
+              <button class="btn btn-success" ng-click="back(newlog)">
                 <i class='icon-white  icon-plus'></i> Add </button>
             </div>
           </div>
