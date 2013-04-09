@@ -1,0 +1,539 @@
+body {
+	padding-top: 40px;
+	background: #f2f2f2;
+	font-size: 12px !important;
+	font-family:  "Lucida Sans Unicode", "Lucida Grande", "tahoma", Verdana, sans-serif !important; 
+	/*padding-bottom: 40px;*/
+	/*background-color: #C6BEA6;
+	background: url("../img/custom/bg_body.jpg");
+	background-repeat: repeat repeat;*/
+}
+
+label, input, button, select, textarea { 
+	font-size: 13px;
+}
+a {
+	color : #444;
+	font-size: 13px;
+}
+
+::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+
+ ::-webkit-scrollbar-thumb {
+	min-height: 28px;
+	padding-top: 100px;
+	border-left: 6px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 0 solid transparent;
+	border-bottom: 0 solid transparent;
+	background-clip: padding-box;
+	background-color: rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+}
+
+::-webkit-scrollbar-button {
+	height: 0;
+	width: 0;
+}
+
+::-webkit-scrollbar-track {
+	border-left: 6px solid transparent;
+	border-right: 1px solid transparent;
+	background-clip: padding-box;
+}
+
+
+/*::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}*/
+
+.divider {
+	height: 5px;
+	background: #bbb;
+}
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.help-inline {
+    font-style: italic;
+    font-size: 11px;
+}
+/*.navbar-inner{
+	background: #49AFCD !important;
+}
+
+.navbar-inner .brand {
+	color: white;
+	text-shadow : none;
+}*/
+.thesidebar {
+	position: fixed; !important;
+	width: 270px !important;
+	height: 100%;
+	border-right: 1px solid #E5E5E5;
+	left: 0px;
+	overflow-x: hidden;
+	z-index: 9000;
+	background: #FAFAFA;
+}
+
+.sidebar-nav a {
+	text-decoration: none;
+}
+.sidebar-nav a:hover {
+	color :#000;
+}
+
+.sidebar-nav {
+	padding: 0px;
+}
+
+.sidebar-nav .accordion-group {
+	margin-bottom: 0px;
+	border-bottom: 1px solid #E5E5E5;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border-right: 0px;
+}
+
+.sidebar-nav .accordion-inner {
+	padding: 0px;
+	background: #ECECEC;
+	border-top: 1px solid #A1A1A1;
+}
+.sidebar-nav .accordion-inner .badge{ 
+	margin-right: 5px;
+}
+
+.sidebar-nav .active_header {
+	background: #49AFCD !important;
+	/*background: #206BA7 !important;*/
+	-webkit-background-clip: border-box !important;
+	background-clip: border-box !important;
+	zoom: 1;
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	-moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	-ms-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	-o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
+
+}
+
+.sidebar-nav .active_header a{ 
+	color : white;
+}
+
+
+
+.ticket_badges .badge {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 10px;	
+	margin-right: 5px;
+}
+.ticket_badges a {
+	width: 150px;
+	padding-right: 10px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.sidebar-nav .accordion-inner ul{
+	margin-bottom: 0px;
+	margin-left :0px;
+}
+.sidebar-nav .accordion-inner li{ 
+	list-style: none;
+	padding: 8px 0px;
+	padding-left: 35px;
+	border-bottom: 1px solid #DDD;
+}
+
+.sidebar-nav .accordion-inner li:last-child{ 
+	border-bottom: none;
+}
+.sidebar-nav .accordion-inner li i{ 
+	margin-right: 10px;
+}
+
+.sidebar-nav .nav_selected_item {
+	background: white;
+}
+
+
+#main_pane {
+	width: 80%;
+	background: white;
+	min-height: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+
+	position: absolute;
+	margin: 0px;
+	/*margin-left: 270px !important;*/
+	left: 270px;
+	/*right: 0px;*/
+}
+
+.frame {
+	position: relative;
+}
+#main_pane .row-fluid{
+	position: absolute;
+	overflow: auto;
+}
+
+#main_pane .inner {
+	padding: 20px;
+	position: absolute;
+	right: 0px;
+	overflow: hidden;
+	min-height: 500px;
+	padding-top: 0px;
+} 
+.toolbar {
+	margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.my-table thead {
+	background-color: #EBEBEB;
+}
+
+.my-table th, .my-table td{
+	font-size: 12px;
+	line-height: 13px;
+}
+
+.modal-header {
+	background: #f2f2f2;
+}
+footer {
+	text-align: center;
+}
+
+footer p {
+	font-size: 10px;
+}
+
+
+.user_select {
+	width: 283px;
+}
+
+.project_detail {
+
+}
+
+.project_detail label {
+	display: inline;
+	float: left;
+	margin-left: 50px;
+	width: 100px;
+}
+
+.project_detail .controls{
+	margin-left: 150px;
+}
+
+.project_detail .project_item_group {
+	margin-bottom: 12px;
+}
+.user_group {
+	margin-left: 50px;
+}
+.user_group label {
+	width : 50px;
+	margin-left: 0px;
+}
+
+.user_group .user_group_control {
+	margin-left: 100px;
+}
+
+.user_group .user_group_control_right {
+	margin-left: 240px;
+}
+
+.user_group .user_group_control_right label {
+	width : 50px;
+	margin-left: 0px;
+}
+
+ .user_group #user_group_user {
+	width: 130px;
+}
+
+.user_group .user_group_control_right select{
+	margin-left: 0px;
+	margin-right: 3px;
+}
+.project_item_group .user_group_table {
+	margin-left: 50px;
+	width: 400px;
+}
+
+#projectDetails .modal-footer{
+	padding-right: 100px
+}
+
+.project_item_group .action , .my-table .action{
+	width: 10px;
+}
+
+#tickets_form .title_field, #tickets_form .message_field {
+	width :97%;
+}
+#tickets_form .ticket_combo {
+	width: 120px;
+	margin-right: 24px;
+}
+
+.project_ticket_control {
+	margin-bottom: 4px;
+}
+.project_ticket_control label {
+	display: inline;
+	font-size: 15px;
+}
+
+.project_ticket_control select {
+	margin-bottom: 0px;
+}
+
+.my_clear {
+	clear : both;
+	overflow: hidden;
+}
+
+label, input, button, select, textarea { 
+	font-size: 12px;
+}
+
+
+.grid_action1 {
+	width: 16px;
+}
+
+.grid_action2 {
+	width: 32px;
+}
+
+.grid_action3 {
+	width: 48px;
+}
+
+.grid_action4 {
+	width: 64px;
+}
+
+/*tickets stuff*/
+.ticket_table .ticket_status {
+	width : 60px;
+}
+
+.ticket_table .ticket_title {
+	/*width: 450px;*/
+}
+
+.ticket_table .ticket_priority {
+	width :60px;
+} 
+
+.ticket_table .ticket_date { 
+	width : 130px;
+}
+
+.ticket_table .ticket_assigned_to {
+	width : 150px;
+}
+
+.ticket_table  tr td , .ticket_table  tr td a {
+	font-size: 11px;
+}
+
+.ticket_table tr td a {
+	color: #08C;
+}
+
+.single_ticket_thread {
+	border-bottom: 1px solid #AAA !important;
+}
+.single_ticket_thread .thread {
+	border: 1px solid #BEBEBE;
+	border-bottom: none;
+	overflow: auto;
+	height: 320px;
+}
+
+.single_ticket_thread .original_message {
+	background: #DDD;
+	/*border-bottom: 1px solid #AAA !important;*/
+}
+
+.single_ticket_thread .original_message p {
+	overflow: auto !important;
+	height: 120px;
+}
+
+.single_ticket_thread .message {
+	overflow: hidden;
+	border-bottom: 1px solid #BEBEBE;
+	padding: 6px;
+	/*padding-top: 12px;*/
+}
+
+.message_and_reply_box {
+	border: 1px solid #BEBEBE;
+	border-bottom: none;
+	overflow: auto;
+}
+
+.thread_box {
+	margin-top: 20px;
+	background: #DDD;
+	border-radius: 5px;
+	border-bottom-right-radius:0px;
+	border-bottom-left-radius:0px;
+}
+
+.thread .message {
+	min-height: 50px;
+}
+.thread_box h4 {
+	padding: 5px;
+	margin: 0px;
+	font-size: 13px;
+}
+
+.single_ticket_thread .message .caption {
+	background: #DDD;
+	text-align: left;
+	font-weight: bold;
+}
+.single_ticket_thread .picture_box {
+	width: 50px;
+	/*padding-top: 10px;*/
+}
+
+.single_ticket_thread .ticket_content {
+	/*float: right;*/
+	margin-left: 10px;
+}
+
+.single_ticket_thread .ticket_content .title{
+	font-weight: Bold;
+	font-size: 13px;
+	margin-left: 40px;
+	border-bottom: 1px solid #BEBEBE;
+	margin-bottom: 10px;
+}
+
+.single_ticket_thread .ticket_content .datebox{
+	float: right;
+	color: #206BA7;
+	font-weight: bold;
+	font-size: 10px;
+	margin-right: 50px;
+}
+.single_ticket_thread .ticket_content .datebox .date{
+	color : #444;
+}
+
+.single_ticket_thread .reply textarea {
+	padding: 10px;
+	width: 100%;
+	min-height: 50px;
+}
+/*pnotify*/
+.ui-pnotify-title {
+	font-size: 14px;
+}
+/*.row-number-item , .action-item {
+	width : 35px;
+}
+
+.form-actions {
+	margin-bottom: 0px;
+	border-bottom: 1px solid #DDD;
+}
+
+legend span {
+	padding-left: 45px;
+}
+
+.action_icon:hover {
+	cursor: pointer;
+}
+
+.username{
+	color : #08C;;
+}
+
+
+footer {
+	text-align: center;
+}
+
+footer p {
+	font-size: 10px;
+}
+
+.list_view {
+	padding-top: 20px;
+}
+
+.list_view li{
+	list-style: none;
+	padding-top: 15px;
+}
+
+.list_view .accordion a{
+	text-decoration : none;
+	font-weight:bold;
+	
+}
+
+.list_view .accordion .accordion-heading {
+	background: #2C2C2C;
+}
+.list_view .accordion .accordion-heading a{
+	color: #999;
+}
+.list_view .accordion .active-head a {
+	color : white ;
+}
+
+.list_view .accordion .in 
+.list_view .accordion .accordion-inner a{
+	color : #888;
+}
+
+.list_view .accordion .accordion-inner {
+	background: white
+}
+
+.list_view li i{
+	padding-right : 5px;
+}
+
+.toolbar_div {
+	margin-bottom: 30px;
+    margin-top: 10px;
+}
+*/

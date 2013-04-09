@@ -1,0 +1,839 @@
+.ax-icon-dashboard {
+	background-image: url(../img/icons/graph.png);	
+}
+
+.ax-icon-patients {
+	background-image: url(../img/icons/patientg_24.png);	
+}
+
+.ax-icon-finance {
+	background-image: url(../img/icons/balance24.png);	
+}
+
+.ax-icon-appointment {
+	background-image: url(../img/icons/appointment_red_24.png);	
+}
+
+.ax-icon-reports {
+	background-image: url(../img/icons/reports_24.png);	
+}
+
+.ax-icon-settings {
+	background-image: url(../img/icons/settings_red_24.png);	
+}
+
+.ax-icon-admin {
+	background-image: url(../img/icons/admin_24.png);	
+}
+
+.ax-icon {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 5px 15px -3px 0px;
+}
+
+.ax_save_button{
+	background-image: url(../img/icons/savebtn.png);	
+}
+
+.ax-icon-small{
+	width: 14px;
+	height: 14px;
+	background-repeat: no-repeat;
+}
+
+.patient_modal{
+	width: 740px;
+	margin: -250px 0 0 -370px;
+}
+
+.patient_modal .middle_entry, .account_form .middle_entry, .appointment_modal .middle_entry {
+	margin-left: 20px;
+}
+
+
+.patient_modal .address {
+	width: 461px;
+	height: 60px;
+}
+
+#appointments_container {
+
+}
+
+#appointments_container #navigator #datelabel{
+	display: inline;
+	font-size: 16px;
+}
+
+#appointments_container #navigator #date_header {
+	margin-left: 50px;
+}
+
+#appointments_container #navigator #date_header .icon{
+	margin: 0px 12px;
+	margin-top: -5px; 
+}
+
+#appointments_container #navigator #date_header .icon:hover{
+	cursor: pointer;
+}
+
+#appointments_container #navigator #date_header #date{
+	font-size: 30px;
+	color: #4D8799;
+	width: 270px;
+	display: inline-block;
+	margin-left: 45px;
+}
+
+.loader {
+	/*margin-top: -15px;*/
+	margin-left: 50px;
+}
+
+.loader img {
+	/*margin-top: -15px;*/
+}
+
+.loader .text {
+	position: absolute;
+	/*margin-top: 10px;*/
+	margin-left: 5px;
+	font-style: italic;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.loader .text_down {
+	margin-top: 10px;
+}
+.accounts_loader {
+	margin-left: 50px;
+	margin-top: 28px;
+	/*position: absolute;*/
+	display: inline-block;
+	width: 200px
+}
+
+#appointments_container .apt_row{
+	overflow: hidden;
+	display: block;
+	padding: 5px;
+	border-bottom: 1px solid #cdcdcd;
+	background: #E8F0F1;
+}
+
+#appointments_container .apt_row .col {
+	float: left;
+}
+
+#appointments_container .apt_row .time{
+	margin-top: 30px;
+	color: #4D8799;
+	font-size: 24px;
+	padding-left: 20px;
+}
+
+#appointments_container .time_slots_container{
+	border: 1px solid #bcbcbc;
+	height: 600px;
+	overflow: auto;
+}
+
+#appointments_container .time_slots_container .appointment{
+	background-color: lightGrey;
+	/*height: 20px;*/
+	padding: 5px;
+	border: 1px solid #bcbcbc;
+}
+
+#appointments_container .time_slots_container .appointment .block{
+	margin-right: 20%;
+}
+
+#appointments_container .time_slots_container .appointment .badge-important,
+#appointments_container .time_slots_container .appointment .label-important {
+	background-color: #DF3E37;
+}
+
+#appointments_container .time_slots_container .appointment .badge-success,
+#appointments_container .time_slots_container .appointment .label-success {
+	background-color: #12A814;
+}
+#appointments_container .time_slots_container .appointment .label a{
+        color: white;
+        text-decoration: none;
+        font-size: 12px;
+} 
+
+#appointments_container .apt_row .apt_content{
+	/*height: 80px;*/
+	padding: 25px 5px;
+	min-width: 600px;
+}
+
+#appointments_container .apt_row .apt_content .details{
+	margin-top: 10px;
+}
+
+.appointment_modal textarea {
+	height: 60px;
+}
+.appointment_modal{
+	width: 580px;
+	margin: -300px 0 0 -290px;
+}
+
+.appointment_modal .modal-body{
+	max-height: 470px; 
+}
+
+.custom_box {
+	/*position: absolute;*/
+}
+
+.account_details_grid_container {
+	height: 350px;
+	right: 20px;
+	left: 20px;
+	border: 1px solid	#B7B7B7;
+	border-top: 0px;
+	margin-bottom: 40px;
+	/*border-bottom: 0px;*/
+}
+
+.account_details_grid_container .ax_grid_action1{
+	width : 22px;
+}
+.account_details_grid_container ._200p {
+	width : 300px;
+}
+
+.account_details_grid_container .arow {
+	/*width : 100%;*/
+	overflow : hidden;
+	display: block;
+	border-bottom: 1px solid #B7B7B7;
+	padding: 5px;
+}
+
+.account_details_grid_container .arow:nth-child(odd) {
+	background-color: #F9F9F9;
+}
+
+.account_details_grid_container .arow .col{
+	float: left;
+}
+
+.account_details_grid_container .header {
+	margin: 0;
+	line-height: 19px;
+	background-color: #E7E7E7;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,white),color-stop(0.75,#E0E0E0),color-stop(1,#F0F0F0));
+	background-image: -webkit-linear-gradient(top,white,#E0E0E0 75%,#F0F0F0);
+	background-image: -moz-linear-gradient(top,white,#E0E0E0 75%,#F0F0F0);
+	background-image: -ms-linear-gradient(top,white,#E0E0E0 75%,#F0F0F0);
+	background-image: -o-linear-gradient(top,white,#E0E0E0 75%,#F0F0F0);
+	background-image: linear-gradient(top,white,#E0E0E0 75%,#F0F0F0);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#F0F0F0',EndColorStr='#E0E0E0');
+	border-top: 1px solid white;
+	border-bottom: 1px solid #B7B7B7;
+	color: #504F4F;
+	text-shadow: white 0 1px 0;
+	text-align: left;
+	font-weight: bold;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	-webkit-background-clip: padding-box;
+	border-top: 1px solid #D0D0D0;
+}
+
+.account_details_grid .body {
+	overflow: auto;
+	display: block;
+	height: 300px;
+}
+
+.single_account_summary .box {
+	margin-bottom: 15px;
+}
+
+.single_account_summary label {
+	display: inline;
+	font-size: 18px !important;
+	color: #3D3D3D;
+	font-weight: bold;
+}
+
+.single_account_summary .balance{
+	color: #CF0C0C;
+	margin-left: 15px ; 
+	font-weight: bold;
+	font-size: 20px !important;
+	padding-bottom: 5px;
+}
+
+.ax_grid .ax_grid_controls .pagination, .pagination{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.pagination .text{
+    top: -8px;
+    position: relative;
+    padding-right: 10px;
+    font-size: 16px;
+}
+
+.ax_grid .ax_grid_controls  .pagination ul > li > a, 
+.ax_grid .ax_grid_controls  .pagination ul > li > span,
+.pagination ul > li > a,
+.pagination ul > li > span
+{ 
+    line-height: 30px;
+}
+
+.ax_btn_toolbar{
+	margin-bottom: 9px;
+}
+
+.ax_grid .ax_grid_controls .control {
+    margin-right: 15px;
+}
+
+.ax_grid .ax_grid_controls .page_identifier {
+    width: 50px;
+}
+
+.ax_grid .filters_text {
+    margin-right: 20px;
+}
+
+.ax_grid {
+    /*font-family: "Lucida Sans Unicode","Lucida Grande","tahoma",Verdana,sans-serif*/
+}
+
+.ax_table  tr td , .ax_table  tr td a {
+    font-size: 11px;
+    line-height: 11px;
+}
+
+.ax_table .strongColumn{
+	font-weight: bold;
+}
+
+.ax_table  tr td {
+    padding: 6px;
+}
+
+/**OVERRIDES**/
+.thesidebar  a{
+	/*font-size: 13px !important;*/
+	color: white;
+}
+
+.nav-list > li > a {
+	padding: 1px 15px 3px;
+}
+
+.nav-list > .active > a {
+	font-weight: bold;
+}
+
+.nav-list > li > a, .nav-list .nav-header {
+	text-shadow : none ;
+}
+
+.nav-list > .active > a, .nav-list > .active > a:hover {
+	text-shadow : none ;
+	background-color : white;
+	color: #413E3E;
+}
+
+.nav-list .divider {
+	background-color: #1D1C1C;
+	border-bottom: 1px solid #777575;
+}
+
+.navbar-inner {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6B6C74), to(#43444F));
+	background-color: #43444F;
+	background-image: -moz-linear-gradient(top, #6B6C74, #43444F);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6B6C74), to(#43444F));
+	background-image: -webkit-linear-gradient(top, #6B6C74, #43444F);
+	background-image: -o-linear-gradient(top, #6B6C74, #43444F);
+	background-image: linear-gradient(to bottom, #6B6C74, #43444F);
+}
+
+
+.navbar .brand {
+	text-shadow: 0 1px 0 #053892;
+	color: white;
+	margin-left: 1px;
+}
+
+.navbar .nav > li > a { 
+	text-shadow: 0 1px 0 #053892;
+	color: white;
+}
+
+.nav-tabs {
+	border : 1px solid #DDD; 
+}
+
+.clear {
+	clear : both;
+	overflow: hidden;
+}
+
+legend {
+	color: #42485F
+}
+
+.datepicker{
+    z-index: 3000;
+}
+
+.datepicker td, .datepicker th {
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.ax_pull_text_right{
+	text-align: right;
+}
+
+.ax_pull_text_center{
+	text-align: center;
+}
+
+.ax_pull_text_left{
+	text-align: left;
+}
+
+.raw_tab{
+	background: none !important;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.tab-content {
+	overflow: visible;
+}
+
+.ax_view_badge a:hover{
+	text-decoration: none;
+}
+
+.ax_banner_widget{
+	/*border: 1px solid #4572A7;
+	background-color: #F2F8F8;
+	height: 90px; 
+	margin-top: 10px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 2px 2px 5px 5px;
+	border-radius: 2px 2px 5px 5px;*/
+
+	color: #333;
+	/*background-color: #BBB;*/
+	/*background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#CDCDCD), to(white));*/
+	background: #F0F0FF;
+	/*border: none;*/
+	/*border-bottom: 1px solid #888;*/
+	-webkit-box-shadow: inset 0 -1px 0px #C1C1C1, inset 0 1px 0px #E6E6E6, inset -1px 0 0px lightGrey, inset 1px 0 0px lightGrey;
+	box-shadow: inset 0 -1px 0px #C1C1C1, inset 0 1px 0px #E6E6E6, inset -1px 0 0px lightGrey, inset 1px 0 0px lightGrey;
+	padding: 0;
+	text-align: center;
+}
+
+.widgetbox {
+	border: 1px solid #DEDEDE;
+	margin-bottom: 30px;
+}
+
+.widgetbox_header {
+	border-bottom: 1px solid #DEDEDE;
+	margin-bottom: -1px;
+	padding: 5px 3px;
+	padding-left: 10px;
+	background-color: #ECECEC;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-border-radius: 2px 2px 0px 0px;
+	border-radius: 2px 2px 0px 0px;
+	overflow: hidden;
+}
+
+.widgetbox_header .title {
+	font-weight: bold;
+}
+
+.widgetbox_body{
+	padding: 10px;
+}
+
+.ax_banner_widget .summary_unit {
+	display: inline-block;
+	margin: 0 14px;
+	font-family: Arial;
+	margin-top: 15px;
+	padding: 0px 25px 0px 0px;
+	/*border-right: 1px solid #7C7C7C;*/
+}
+
+.summary_unit .summary_unit_header {
+	font-size: 14px;
+	color: #3A87AD;
+	font-weight: bold;
+	text-align: center;
+	/*background-color: #E8F0F1;
+	border: 1px solid #BCBCBC;*/
+}
+
+.summary_unit .summary_unit_content {
+	padding-bottom: 10px;
+	font-size: 25px;
+	text-align: center;
+	color: #333;
+}
+
+.summary_unit_content .cedi{
+	color: #B94A48;
+	font-size: 20px;
+}
+
+.summary_unit_content .dolar{
+	color: #C09853;
+}
+
+.ax_report_select{
+	border-bottom: 1px solid #CACACA;
+}
+
+.ax_report_header{
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 5px;
+	text-align: center;
+}
+
+.report_controls { 
+	margin: 0px 0px 10px;
+}
+
+
+.ax_print_box{
+	margin: 20px;
+}
+
+.ax_print_box .heading{
+	text-align: center;
+}
+
+.search_form {
+	margin-left: 50px;
+}
+
+.search_form label{
+	display: inline;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.dash_row {
+	margin-left: 0px !important;
+	margin-top: 20px;
+}
+
+/*Product and Sales*/
+.product_form .long {
+    width: 97%;
+}
+
+.product_form .product_code{
+	margin-right: 4px;
+}
+
+.twin_grids{
+    border: 1px solid #dcdcdc;
+    position: relative;
+    left: 0.2% ; /*for some reason this fixes a bug*/
+}
+
+.twin_header {
+    background: #777;
+    color: white;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-family: Tahoma
+}
+
+.sales_tool_bar{
+	height: 45px;
+}
+
+.sales_view .items_to_sell{
+    margin-top: 8px;
+    margin-left: 5px;
+}
+.sales_point .qty_box {
+    height: 25px;
+}
+
+.sales_point .unit_cost , .sales_point .small_box{
+    width : 68px;
+}
+
+.badge {
+    font-weight: normal;
+}
+
+.sales_point .sales_form {
+    padding: 5px 35px;
+}
+
+.sales_point .amount_box {
+    background: #5bb75b;
+}
+
+.sales_point .amount_box .totalAmount{
+    padding: 20px ;
+    color: black;
+    font-size: 30px;
+    font-family: Arial;
+    /*font-weight: bold;*/
+    border-bottom: 1px solid #667;
+}
+
+.sales_point .ax_sale_panel {
+    width: 38%;
+    height: 100%;
+    position: relative;
+}
+
+.sales_point .ax_sales_item_panel {
+    width: 61.7%;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    border-right: 1px solid #dcdcdc;
+}
+
+.sales_point .sale_button {
+    font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.sales_grid .search_form label, .ax_grid .search_form label{
+    display: inline;
+}
+
+
+.twin_grids .puchase_grid{
+	width: 69.7%;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    /*z-index: 100;*/
+    background: #fff;
+    border-right: 1px solid #dcdcdc;
+}
+
+.twin_grids .purchase_details_grid {
+    width:30%;
+    height: 100%;
+    position: relative;
+    /*z-index: 99;*/
+}
+
+
+.purhase_actions a, .purhase_actions a:hover{
+    text-decoration: none;
+}
+
+.purchase_form{
+    width: 900px;
+    margin: -256px 0 0 -450px;
+}
+
+.purchase_form .text{
+    width: 250px ;
+}
+
+.purchase_form .quantity_item {
+    margin-left: 35px;
+}
+
+.purchase_form , .sales_grid{
+    width : 620px;
+    margin: -256px 0 0 -310px;
+}
+
+.purchase_form .modal-body {
+    height: 500px;
+}
+
+.purchase_form .order_items_table {
+    font-size: 13px;
+}
+
+.purchase_form .order_items {
+    
+}
+
+.purchase_form .break_down_btn {
+    margin-top: 25px;
+ }
+
+.new_purchase_items_twin_grids .purchase_item_details_grid {
+    width: 300px;
+    height: 100%;
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-left: 5px;
+}
+.new_purchase_items_twin_grids .purchase_item_details_grid  .edited_product_title {
+    padding: 7px;
+}
+
+
+.new_purchase_items_twin_grids .purchased_items_grid{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    /*z-index: 100;*/
+    background: #fff;
+
+    /*border-right: 1px solid #dcdcdc;*/
+}
+
+.new_purchase_items_twin_grids .purchase_item_details_grid input,  .new_purchase_items_twin_grids .cust_input{
+    height: 25px;
+}
+
+.purchase_order_form .break_down_btn {
+    margin-top: 25px;
+ }
+.purchase_order_details_grid .purchase_breakdown{
+    /*margin-bottom: 10px;*/
+}
+.purchase_order_details_grid .purchase_breakdown_grid{
+    border: 1px solid #dedede;
+}
+
+.purchase_order_details_grid .break_down_title{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: green;
+    border: 1px solid #dedede;
+    font-size: 14px;
+    padding: 8px; 
+    background-color: #dff0d8;
+}
+
+.purchase_order_details_grid .purchase_breakdown_grid .totals {
+    font-weight: bold;
+    color: green;
+}
+
+.table .row_selected_true td{
+    background-color: #51A323  !important;
+}
+
+.schedule td {
+	padding: 0px;
+	/*text-align: center;*/
+}
+
+.schedule .schedule_day .box {
+	/*width: 30px;*/
+	height: 30px;
+	background: #A03318;
+	display: block;
+}
+
+.schedule .schedule_week .box { 
+	display: block;
+	height: 60px;
+	margin: 4px;
+	text-align: center;
+	background: #D1CFCD;
+	/*todo make background color dynamic*/
+	border: 1px solid #C0C0CA; 
+}
+
+.schedule th {
+	color: #A03318;
+}
+
+.schedule .doctor{
+	color: #A03318;
+}
+
+.schedule .schedule_pager {
+	margin-right: 20px;
+}
+
+/*Removing the border from the table for the schedule grids*/
+.schedule .table-bordered {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.schedule .table-bordered thead:first-child tr:first-child th:first-child, 
+.schedule .table-bordered tbody:first-child tr:first-child td:first-child ,
+.schedule .table-bordered thead:last-child tr:last-child th:first-child, .table-bordered tbody:last-child tr:last-child td:first-child, 
+.schedule .table-bordered tfoot:last-child tr:last-child td:first-child {
+	webkit-border-top-left-radius: 0px;
+	border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+}
+
+.schedule  .table-bordered thead:last-child tr:last-child th:first-child, 
+.schedule  .table-bordered tbody:last-child tr:last-child td:first-child, 
+.schedule  .table-bordered tfoot:last-child tr:last-child td:first-child {
+	-webkit-border-radius: 0 0 0 0px;
+	-moz-border-radius: 0 0 0 0px;
+	border-radius: 0 0 0 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+}
+
+.schedule_form .schedule_datepicker {
+	border : 1px solid #DADADA;
+}
+
+.schedule_form .schedule_dates_table{
+	width: 50%;
+}
+
+.finance_amount_with_currency{
+	width: 242px;
+}
+
+.amt_currency{
+	width: 70px;
+}
+
+.amt_amount{
+	width: 195px;
+}
+
+.bill_detail{
+	margin-left:310px;
+	margin-top:20px;
+}

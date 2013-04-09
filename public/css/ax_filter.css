@@ -1,0 +1,33 @@
+.ax_filter_control .ax_filter_form{
+    padding: 8px;
+}
+
+.ax_filter_control .ax_filter_form .btn{ 
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ax_filter_form .control-group {
+    margin-bottom: 0px;
+}
+
+.ax_filter_form  select {
+    margin: 0px;
+    position: absolute;
+}
+
+.ax_filter_control {
+    margin-left: 5px;
+}
+
+.ax_filter_control .filter_caption {
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+/*
+.ax_filter_control .ax_dropdown_toggle{
+    padding-bottom: 12px; 
+}
+
+*/
