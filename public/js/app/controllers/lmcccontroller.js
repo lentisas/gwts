@@ -1,30 +1,28 @@
 function LMCCController ($scope, LMCC, $http) {
 	
-
-	$scope.contractors= [
-		{id: 0, name: "John Bitar", propertyMark:'JCM' },
-		{id: 1, name: "AYUM Ltd", propertyMark:'AYUM' },
-		{id: 2, name: "Kenbert Ltd", propertyMark:'KBT' }
-	];
-
-	$scope.forestDistricts = [
-		{id: 0, name:'Bekwai', localityMark:'34'},
-		{id: 0, name:'Juaso', localityMark:'14'},
-		{id: 0, name:'Kumawu', localityMark:'87'}
-	];
-
-
+	$scope.contractors= [];
+	$scope.forestDistricts = [];
 	$scope.lmccLogs = [];
 
 	function getContractors () {
-		$http.get('').success(function (res) {
-			
+		$http.get('lmccs?type=contractors').success(function (res) {
+			$scope.contractors = res.data;
 		})
 	}
 
+	function getForestDistricts () {
+		$http.get('forestdistricts').success(function (res) {
+			$scope.forestDistricts = res.data;
+		})
+	}
 
 	$scope.addNewLog = function () {
-		
+		$('#lmcc_tabs li:eq(1) a').tab('show');
+		//console.log("gets here");
+	}
+
+	$scope.back = function () {
+		$('#lmcc_tabs a:first').tab('show');
 	}
 
 	$scope.addLog = function (log) {
@@ -52,4 +50,7 @@ function LMCCController ($scope, LMCC, $http) {
 
 		$scope.lmccLogs.push(log);
 	}
+
+	getContractors();
+	getForestDistricts();
 }
