@@ -36,6 +36,35 @@ class Create_Tucs {
 		    $table->integer('updated_by')->unsigned();		    
 		    $table->timestamps();		    
 		});
+
+		// insert a default lifs
+		DB::table('tucs')->insert(array(
+			array(
+				'id' => 1,
+				'reference_number' => 'BKTU0001',
+				'name' => "John Menns",
+            	'company_id'=> 1, 
+            	'mlnr_approval_ref' => "LI0012".date('Ymd'),
+				'date_of_award' => date('2013-04-01 00:00:00'),
+            	'date_of_expiry'=> date('2020-04-01 00:00:00'),
+            	'duration_in_years' => 7,
+            	'forest_reserve_code'=> "FR0001".date('Ymd'),
+            	'area' => '',
+            	'total_compartment_area'=> 500.23,
+            	'date_of_grant' => date('2013-03-01 00:00:00'),
+				'duration_of_grant' => 7,
+            	'date_of_endorsement'=> date('2013-04-01 00:00:00'),
+            	'notification_letter_ref' => 'NTLT00102'.date('Ymd'),
+            	'rights_invoice_ref'=> "RIN23451".date('Ymd'),
+            	'payment_status' => 'paid',
+            	'forest_management_plan_ref'=> "FMP001234".date('Ymd'),
+            	'delineation_completed' => 'yes',
+            	'map_ref'=> "MP00001".date('Ymd'),
+            	'created_by' => 1,
+				'updated_by' => 1,
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
+			)));
 	}
 
 	/**

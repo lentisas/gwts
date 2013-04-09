@@ -23,6 +23,22 @@ class Create_Lifs {
 		    $table->integer('updated_by')->unsigned();		    
 		    $table->timestamps();		    
 		});
+
+		// insert a default lifs
+		DB::table('lifs')->insert(array(
+			array(
+				'id' => 1,
+				'reference_number' => 'BKTI0001',
+				'tuc_id' => 1,
+            	'tif_id'=> 1, 
+            	'date' => date('Y-m-d H:i:s'),
+				'total_number_of_logs' => 4,
+            	'contractors_name'	=> "Kojo Manu",
+            	'created_by' => 1,
+				'updated_by' => 1,
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
+			)));
 	}
 
 	/**
