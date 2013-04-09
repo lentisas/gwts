@@ -5,7 +5,7 @@ function LMCCController ($scope, LMCC, $http) {
 	$scope.lmccLogs = [];
 
 	function getContractors () {
-		$http.get('lmccs?type=contractors').success(function (res) {
+		$http.get('companies?type=contractors').success(function (res) {
 			$scope.contractors = res.data;
 		})
 	}
