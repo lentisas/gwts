@@ -26,6 +26,41 @@ class Create_Tif_Details {
 		    $table->integer('updated_by')->unsigned();		    
 		    $table->timestamps();		    
 		});
+
+		// insert a default tif_details
+		DB::table('tif_details')->insert(array(
+			array(
+				'id' => 1,
+				'tif_id' => 1,
+				'reserve_code' => 'BKTI0001',				
+            	'stock_survey_number'=> '1', 
+            	'tree_number' => '0010',
+				'species_id' => 1,
+            	'tree_length'	=> 45,
+            	'diameter1' => 20,
+				'diameter2' => 18,
+            	'volume'	=> 112,
+            	'created_by' => 1,
+				'updated_by' => 1,
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
+			),
+			array(
+				'id' => 2,
+				'tif_id' => 1,
+				'reserve_code' => 'BKTI0001',				
+            	'stock_survey_number'=> '1', 
+            	'tree_number' => '0011',
+				'species_id' => 2,
+            	'tree_length'	=> 40,
+            	'diameter1' => 18,
+				'diameter2' => 15,
+            	'volume'	=> 110,
+            	'created_by' => 1,
+				'updated_by' => 1,
+				'created_at' => date('Y-m-d H:i:s'),
+				'updated_at' => date('Y-m-d H:i:s')
+			)));
 	}
 
 	/**
