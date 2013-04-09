@@ -1,22 +1,26 @@
 <?php
 class Lif extends Eloquent{
 
-	public function create_lif($client_data){
+	public static function create_lif($client_data){
 		try{
+			//begin transaction;
+            DB::connection()->pdo->beginTransaction();
 
 			$inputs = array("reference_number" => $client_data->referenceNumber, 
 							"tuc_id" => $client_data->tucId, 
 							"tif_id" => $client_data->tifId, 
 							"date" => $client_data->date, 
 							"total_number_of_logs" => $client_data->totalNumberOfLogs, 
-							"contractors_name" => $client_data->contractorsName, 
+							"contractors_name" => $client_data->contractorsName,
+							"lif_details" => $client_data->lifDetails 
 							);
 			$rules = array("reference_number" => "required|max:128", 
 							"tuc_id" => "required|numeric", 
 							"tif_id" => "required|numeric", 
 							"date" => "required", 
 							"total_number_of_logs" => "required|numeric", 
-							"contractors_name" => "required|max:128", 
+							"contractors_name" => "required|max:128",
+							"lif_details" => "required" 
 							);
 
 			$validation = MyValidator::validate_user_input($inputs,$rules);
@@ -35,14 +39,21 @@ class Lif extends Eloquent{
 			if(!$inserted_record['success'])
 				throw new Exception($inserted_record['message']);
 
+			LifDetail::create_lif_details($inserted_record['data']['id'] ,$client_data->lifDetails);
+
+			//commit transaction
+            DB::connection()->pdo->commit();
 			return $inserted_record;
 		}catch(Exception $e){
+			DB::connection()->pdo->rollback();
 			return HelperFunction::catch_error($e,true,HelperFunction::get_admin_error_msg());
 		}
 	}
 
-	public function update_lif($client_data){
+	public static function update_lif($client_data){
 		try{
+			//begin transaction;
+            DB::connection()->pdo->beginTransaction();
 
 			$inputs = array("id" => $client_data->id, 
 							"reference_number" => $client_data->referenceNumber, 
@@ -50,7 +61,8 @@ class Lif extends Eloquent{
 							"tif_id" => $client_data->tifId, 
 							"date" => $client_data->date, 
 							"total_number_of_logs" => $client_data->totalNumberOfLogs, 
-							"contractors_name" => $client_data->contractorsName, 
+							"contractors_name" => $client_data->contractorsName,
+							"lif_details" => $client_data->lifDetails 
 							);
 			$rules = array("id" => "required|numeric", 
 							"reference_number" => "required|max:128", 
@@ -58,7 +70,8 @@ class Lif extends Eloquent{
 							"tif_id" => "required|numeric", 
 							"date" => "required", 
 							"total_number_of_logs" => "required|numeric", 
-							"contractors_name" => "required|max:128", 
+							"contractors_name" => "required|max:128",
+							"lif_details" => "required"  
 							);
 
 			$validation = MyValidator::validate_user_input($inputs,$rules);
@@ -78,13 +91,18 @@ class Lif extends Eloquent{
 			if(!$updated_record['success'])
 				throw new Exception($updated_record['message'],1);
 
+			LifDetail::update_lif_details($client_data->lifDetails);
+
+			//commit transaction
+            DB::connection()->pdo->commit();
 			return $updated_record;
 		}catch(Exception $e){
+			DB::connection()->pdo->rollback();
 			return HelperFunction::catch_error($e,true,HelperFunction::get_admin_error_msg());
 		}
 	}
 
-	public function delete_lif($id){		
+	public static function delete_lif($id){		
 		try{
 
 			$deleted_entry = DB::table('lifs')->delete($id);
@@ -95,7 +113,7 @@ class Lif extends Eloquent{
 		}
 	}
 
-	public function get_lifs($client_data){
+	public static function get_lifs($client_data){
 		try{
 			$filter_array = array();
 			if(array_key_exists("id", $client_data))
@@ -134,7 +152,9 @@ class Lif extends Eloquent{
 								);
 
 			$out = array_map(function($data){
-				
+						
+						$lif_details = LifDetail::get_lif_details($data->id);
+
 						$arr = array();
 						$arr["id"] = $data->id;
 						$arr["referenceNumber"] = $data->reference_number;
@@ -143,6 +163,7 @@ class Lif extends Eloquent{
 						$arr["date"] = HelperFunction::format_date_to_client($data->date);
 						$arr["totalNumberOfLogs"] = $data->total_number_of_logs;
 						$arr["contractorsName"] = $data->contractors_name;
+						$arr["lifDetails"] = $lif_details;
 						
 						return $arr;
 			},$result);

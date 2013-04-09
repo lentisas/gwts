@@ -1,8 +1,10 @@
 <?php
 class Lmcc extends Eloquent{
 
-	public function create_lmcc($client_data){
+	public static function create_lmcc($client_data){
 		try{
+			//begin transaction;
+            DB::connection()->pdo->beginTransaction();
 
 			$inputs = array("reference_number" => $client_data->referenceNumber, 
 							"company_id" => $client_data->companyId, 
@@ -18,7 +20,8 @@ class Lmcc extends Eloquent{
 							"expiry_date" => $client_data->expiryDate, 
 							"property_mark_agent_name" => $client_data->propertyMarkAgentName, 
 							"tidd_officer_name" => $client_data->tiddOfficerName, 
-							"tidd_officer_number" => $client_data->tiddOfficerNumber, 
+							"tidd_officer_number" => $client_data->tiddOfficerNumber,
+							"lmccDetails" => $client_data->lmccDetails 
 							);
 			$rules = array("reference_number" => "required|max:128", 
 							"company_id" => "required|numeric", 
@@ -34,7 +37,8 @@ class Lmcc extends Eloquent{
 							"expiry_date" => "required", 
 							"property_mark_agent_name" => "required|max:128", 
 							"tidd_officer_name" => "required|max:128", 
-							"tidd_officer_number" => "required|max:128", 
+							"tidd_officer_number" => "required|max:128",
+							"lmccDetails" => "required" 
 							);
 
 			$validation = MyValidator::validate_user_input($inputs,$rules);
@@ -62,14 +66,22 @@ class Lmcc extends Eloquent{
 			if(!$inserted_record['success'])
 				throw new Exception($inserted_record['message']);
 
+			LmccDetail::create_lmcc_detail($inserted_record['data']['id'], $client_data->lmccDetails);
+
+			//commit transaction
+            DB::connection()->pdo->commit();
+
 			return $inserted_record;
 		}catch(Exception $e){
+			DB::connection()->pdo->rollback();
 			return HelperFunction::catch_error($e,true,HelperFunction::get_admin_error_msg());
 		}
 	}
 
-	public function update_lmcc($client_data){
+	public static function update_lmcc($client_data){
 		try{
+			//begin transaction;
+            DB::connection()->pdo->beginTransaction();
 
 			$inputs = array("id" => $client_data->id, 
 							"reference_number" => $client_data->referenceNumber, 
@@ -86,7 +98,8 @@ class Lmcc extends Eloquent{
 							"expiry_date" => $client_data->expiryDate, 
 							"property_mark_agent_name" => $client_data->propertyMarkAgentName, 
 							"tidd_officer_name" => $client_data->tiddOfficerName, 
-							"tidd_officer_number" => $client_data->tiddOfficerNumber, 
+							"tidd_officer_number" => $client_data->tiddOfficerNumber,
+							"lmccDetails" => $client_data->lmccDetails 
 							);
 			$rules = array("id" => "required|numeric", 
 							"reference_number" => "required|max:128", 
@@ -104,6 +117,7 @@ class Lmcc extends Eloquent{
 							"property_mark_agent_name" => "required|max:128", 
 							"tidd_officer_name" => "required|max:128", 
 							"tidd_officer_number" => "required|max:128", 
+							"lmccDetails" => "required" 
 							);
 
 			$validation = MyValidator::validate_user_input($inputs,$rules);
@@ -132,13 +146,19 @@ class Lmcc extends Eloquent{
 			if(!$updated_record['success'])
 				throw new Exception($updated_record['message'],1);
 
+			LmccDetail::update_lmcc_detail($client_data->lmccDetails);
+
+			//commit transaction
+            DB::connection()->pdo->commit();
+
 			return $updated_record;
 		}catch(Exception $e){
+			DB::connection()->pdo->rollback();
 			return HelperFunction::catch_error($e,true,HelperFunction::get_admin_error_msg());
 		}
 	}
 
-	public function delete_lmcc($id){		
+	public static function delete_lmcc($id){		
 		try{
 
 			$deleted_entry = DB::table('lmccs')->delete($id);
@@ -149,7 +169,7 @@ class Lmcc extends Eloquent{
 		}
 	}
 
-	public function get_lmccs($client_data){
+	public static function get_lmccs($client_data){
 		try{
 			$filter_array = array();
 			if(array_key_exists("id", $client_data))
@@ -192,6 +212,8 @@ class Lmcc extends Eloquent{
 
 			$out = array_map(function($data){
 
+					$lmcc_details = LmccDetail::get_lmcc_details($data->id);
+
 					$arr = array();
 					$arr["id"] = $data->id;
 					$arr["referenceNumber"] = $data->reference_number;
@@ -209,6 +231,7 @@ class Lmcc extends Eloquent{
 					$arr["propertyMarkAgentName"] = $data->property_mark_agent_name;
 					$arr["tiddOfficerName"] = $data->tidd_officer_name;
 					$arr["tiddOfficerNumber"] = $data->tidd_officer_number;
+					$arr["lmccDetails"] = $data->lmcc_details;
 					
 					return $arr;
 				},$result);

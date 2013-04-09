@@ -56,10 +56,11 @@ class Company extends Eloquent{
 		}
 	}
 
-	public function update_company($client_data){
+	public static function update_company($client_data){
 		try{
 
-			$inp"name" => $client_data->name, 
+			$inpute = array("id" => $client_data->id,
+				"name" => $client_data->name, 
 				"code" => $client_data->code, 
 				"date_registered" => $client_data->dateRegistered, 
 				"expires" => $client_data->expires, 
@@ -113,7 +114,7 @@ class Company extends Eloquent{
 		}
 	}
 
-	public function delete_company($id){		
+	public static function delete_company($id){		
 		try{
 
 			$deleted_entry = DB::table('companies')->delete($id);
@@ -124,7 +125,7 @@ class Company extends Eloquent{
 		}
 	}
 
-	public function get_companies($client_data){
+	public static function get_companies($client_data){
 		try{
 			$filter_array = array();
 			if(array_key_exists("id", $client_data))
@@ -135,7 +136,7 @@ class Company extends Eloquent{
 				$filter_array["companies.code"] = "%".$client_data["code"]."%";
 
 			$query_result = DB::table('companies')
-								->join('company_types','company_types.company_type_id','=','company_types.id')
+								->join('company_types','companies.company_type_id','=','company_types.id')
 								->where(function($query) use ($filter_array){				
 									$query = DataHelper::filter_data($query,"companies.id",$filter_array,"int");
 									$query = DataHelper::filter_data($query,"companies.name",$filter_array,"string","like");

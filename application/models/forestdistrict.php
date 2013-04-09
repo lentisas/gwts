@@ -1,7 +1,7 @@
 <?php
 class ForestDistrict extends Eloquent{
 
-	public function create_forest_district($client_data){
+	public static function create_forest_district($client_data){
 		try{
 
 			$inputs = array("name" => $client_data->name, 
@@ -37,7 +37,7 @@ class ForestDistrict extends Eloquent{
 		}
 	}
 
-	public function update_forest_district($client_data){
+	public static function update_forest_district($client_data){
 		try{
 
 			$inputs = array("id" => $client_data->id, 
@@ -76,7 +76,7 @@ class ForestDistrict extends Eloquent{
 		}
 	}
 
-	public function delete_forest_district($id){		
+	public static function delete_forest_district($id){		
 		try{
 
 			$deleted_entry = DB::table('forest_districts')->delete($id);
@@ -87,7 +87,7 @@ class ForestDistrict extends Eloquent{
 		}
 	}
 
-	public function get_forest_districts($client_data){
+	public static function get_forest_districts($client_data){
 		try{
 			$filter_array = array();
 			if(array_key_exists("id", $client_data))

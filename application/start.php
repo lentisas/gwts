@@ -60,6 +60,8 @@ Laravel\Autoloader::$aliases = $aliases;
 
 Autoloader::map(array(
 	'Base_Controller' => path('app').'controllers/base.php',
+	'HelperFunction'	=>	path('app').'libraries/helperfunctions.php',
+	'DataHelper'		=>	path('app').'libraries/dbhelperfunctions.php',
 ));
 
 /*
@@ -76,6 +78,12 @@ Autoloader::map(array(
 Autoloader::directories(array(
 	path('app').'models',
 	path('app').'libraries',
+	/*path('app').'models/account',
+	path('app').'models/patients',
+	path('app').'models/security',
+	path('app').'models/lookups',
+	path('app').'models/summaries',
+	path('app').'models/reports'*/
 ));
 
 /*

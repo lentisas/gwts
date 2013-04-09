@@ -1,7 +1,7 @@
 <?php
 class CompanyType extends Eloquent{
 
-	public function create_company_type($client_data){
+	public static  function create_company_type($client_data){
 		try{
 
 			$inputs = array("name" => $client_data->name);
@@ -25,7 +25,7 @@ class CompanyType extends Eloquent{
 		}
 	}
 
-	public function update_company_type($client_data){
+	public static function update_company_type($client_data){
 		try{
 
 			$inputs = array("id" => $client_data->id, 
@@ -52,7 +52,7 @@ class CompanyType extends Eloquent{
 		}
 	}
 
-	public function delete_company_type($id){		
+	public static function delete_company_type($id){		
 		try{
 
 			$deleted_entry = DB::table('company_types')->delete($id);
@@ -63,7 +63,7 @@ class CompanyType extends Eloquent{
 		}
 	}
 
-	public function get_company_types($client_data){
+	public static function get_company_types($client_data){
 		try{
 			$filter_array = array();
 			if(array_key_exists("id", $client_data))
