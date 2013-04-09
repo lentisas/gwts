@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!--> 
+<!--[if !IE]><!-->
 <html lang="en" ng-app="gwts"> <!--<![endif]-->
 <!-- BEGIN HEAD -->
 <head>
@@ -11,13 +11,13 @@
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
   <meta content="" name="gwts" />
   <meta content="" name="axon informatio  systems" />
-  <?php 
+  <?php
 
         //Le styles
         echo HTML::style("css/bootstrap.css");
-        
+
         echo HTML::style("css/bootstrap-responsive.css");
-        //echo HTML::style("css/layout.css");
+        echo HTML::style("css/app.css");
         echo HTML::style("css/font-awesome/css/font-awesome.css");
         echo HTML::style("css/metro.css");
         echo HTML::style("css/style.css");
@@ -29,6 +29,11 @@
         echo HTML::style("css/chosen/chosen.css");
         echo HTML::style("css/datepicker.css");
         echo HTML::style("css/select2/select2.css");
+
+        echo HTML::style("assets/css/style.css");
+        echo HTML::style("assets/css/style_responsive.css");
+        echo HTML::style("assets/css/style_default.css");
+        echo HTML::style("assets/uniform/css/uniform.default.css");
      ?>
     <style type="text/css">
         /*This is need to hide {{}} when the app loads*/
@@ -47,27 +52,27 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-    
-<?php 
+
+<?php
     //Libraries
     echo HTML::script("js/libs/angular.min.js");
     echo HTML::script("js/libs/angular-resource.min.js");
     //end of libraries
 
-    //Compnents && Widget Services 
+    //Compnents && Widget Services
     echo HTML::script("js/app/components/services/paging_service.js");
     echo HTML::script("js/app/components/services/filtering_service.js");
-    
+
     //Compnents && Widgets
-    echo HTML::script("js/app/components/date_picker_component.js"); 
-    echo HTML::script("js/app/components/widget_container_component.js"); 
+    echo HTML::script("js/app/components/date_picker_component.js");
+    echo HTML::script("js/app/components/widget_container_component.js");
     echo HTML::script("js/app/components/pager_component.js");
-    echo HTML::script("js/app/components/chosen_component.js"); 
-    echo HTML::script("js/app/components/print_component.js"); 
+    echo HTML::script("js/app/components/chosen_component.js");
+    echo HTML::script("js/app/components/print_component.js");
     echo HTML::script("js/app/components/filter_component.js");
     echo HTML::script("js/app/components/time_component.js");
     echo HTML::script("js/app/components/select_component.js");
-        
+
     //App Scripts
     echo HTML::script("js/app/app.js");
     echo HTML::script("js/app/helpers.js");

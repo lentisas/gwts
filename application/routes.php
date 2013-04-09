@@ -32,10 +32,12 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+
+
+// View Routes
+Route::get('/', array("as" => "home", "uses" => "view@home"));
+//Route::get('lmcc', array("as" => "lmcc", "uses" => "view@lmcc"));
+Route::get("lmcc_view", array("as" => "lmcc_view","uses" => "view@lmcc"));
 
 //users
 Route::post('users',array('uses' => 'main@user'));
@@ -74,7 +76,7 @@ Route::get('lifdetails',array('uses' => 'main@lifdetails'));
 Route::delete('lifdetails/(:num)',array('uses' => 'main@lifdetail'));
 
 //lmccs
-Route::post('lmccs',array('uses' => 'main@lmcc'));
+Route::post('lmccs',['uses' => 'main@lmcc']);
 Route::put("lmccs/(:num)",array('uses' => 'main@lmcc'));
 Route::get('lmccs',array('uses' => 'main@lmccs'));
 Route::delete('lmccs/(:num)',array('uses' => 'main@lmcc'));
