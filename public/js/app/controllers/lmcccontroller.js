@@ -1,4 +1,4 @@
-function LMCCController ($scope, LMCC) {
+function LMCCController ($scope, LMCC, $http) {
 	
 
 	$scope.contractors= [
@@ -15,6 +15,12 @@ function LMCCController ($scope, LMCC) {
 
 
 	$scope.lmccLogs = [];
+
+	function getContractors () {
+		$http.get('').success(function (res) {
+			
+		})
+	}
 
 
 	$scope.addNewLog = function () {
@@ -37,7 +43,13 @@ function LMCCController ($scope, LMCC) {
 			dt1: log.dt1,
 			dt2: log.dt2,
 			dt3: log.dt3,
-			length: log
+			length: log.length,
+			vol: log.vol,
+			defects: log.defects,
+			grade:log.grade
 		}
+
+
+		$scope.lmccLogs.push(log);
 	}
 }
