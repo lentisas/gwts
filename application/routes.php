@@ -82,10 +82,10 @@ Route::get('lmccs',array('uses' => 'main@lmccs'));
 Route::delete('lmccs/(:num)',array('uses' => 'main@lmcc'));
 
 //lmcc_details
-Route::post('lmcc_details',array('uses' => 'main@lmcc_detail'));
-Route::put("lmcc_details/(:num)",array('uses' => 'main@lmcc_detail'));
-Route::get('lmcc_details',array('uses' => 'main@lmcc_details'));
-Route::delete('lmcc_details/(:num)',array('uses' => 'main@lmcc_detail'));
+Route::post('lmccdetails',array('uses' => 'main@lmccdetail'));
+Route::put("lmccdetails/(:num)",array('uses' => 'main@lmccdetail'));
+Route::get('lmccdetails',array('uses' => 'main@lmccdetails'));
+Route::delete('lmccdetails/(:num)',array('uses' => 'main@lmccdetail'));
 
 //regions
 Route::post('regions',array('uses' => 'main@region'));
