@@ -32,10 +32,12 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+
+
+// View Routes
+Route::get('/', array("as" => "home", "uses" => "view@home"));
+//Route::get('lmcc', array("as" => "lmcc", "uses" => "view@lmcc"));
+Route::get("lmcc_view", array("uses" => "view@lmcc"));
 
 //users
 Route::post('users',array('uses' => 'main@user'));

@@ -17,7 +17,7 @@
         echo HTML::style("css/bootstrap.css");
         
         echo HTML::style("css/bootstrap-responsive.css");
-        //echo HTML::style("css/layout.css");
+        echo HTML::style("css/app.css");
         echo HTML::style("css/font-awesome/css/font-awesome.css");
         echo HTML::style("css/metro.css");
         echo HTML::style("css/style.css");
