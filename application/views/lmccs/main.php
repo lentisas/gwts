@@ -82,9 +82,11 @@
 
       <div class="control-group">
         <div class="controls">
-          <button href="#" class="btn btn-success" ng-click="addLog()"><i class='icon-white icon-th'></i> Add Log </button>
+          <button href="#" class="btn btn-success" ng-click="addNewLog()">
+            <i class='icon-white icon-th'></i> Add Log </button>
         </div>
       </div>
     </div>
+    
   </div>
 </div>
