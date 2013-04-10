@@ -39,8 +39,7 @@ return array(
 	|
 	*/
 
-	'index' => 'index.php',
-
+	'index' => '', 
 	/*
 	|--------------------------------------------------------------------------
 	| Application Key
@@ -53,7 +52,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKeyGoesHere!',
+	'key' => 'WnQHmSJEcOuXkQGWMDMrH6iI6ryoyQVR',
 
 	/*
 	|--------------------------------------------------------------------------
