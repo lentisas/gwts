@@ -16,6 +16,12 @@ function LMCCController ($scope, LMCC, $http) {
 		})
 	}
 
+	function getSpecies () {
+		$http.get('species').success(function (res) {
+			$scope.speciesList = res.data;
+		})
+	}
+
 	$scope.addNewLog = function () {
 		$('#lmcc_tabs li:eq(1) a').tab('show');
 		//console.log("gets here");
@@ -58,4 +64,5 @@ function LMCCController ($scope, LMCC, $http) {
 
 	getContractors();
 	getForestDistricts();
+	getSpecies();
 }

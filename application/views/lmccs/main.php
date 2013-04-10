@@ -121,7 +121,7 @@
               TIF Ref No.
             </div>
             <div class="controls">
-              <input type="text" name="tifRef" class="input-large" ng-model="newlog.tifRef" placeholder="TIF Ref. Number">
+              <input type="number" name="tifRef" class="input-large" ng-model="newlog.tifRef" required>
             </div>
           </div>
 
@@ -130,7 +130,7 @@
               Reserve Code:
             </div>
             <div class="controls">
-              <input type="text" name="reserveCode" class="input-large" ng-model="newlog.reserveCode" placeholder="Reserve Code">
+              <input type="number" name="reserveCode" class="input-large" ng-model="newlog.reserveCode" required>
             </div>
           </div>
 
@@ -139,7 +139,7 @@
               Compartment No:
             </div>
             <div class="controls">
-              <input type="text" name="compartmentNumber" class="input-large" ng-model="newlog.compartmentNumber" placeholder="Compartment Number">
+              <input type="number" name="compartmentNumber" class="input-large" ng-model="newlog.compartmentNumber" required>
             </div>
           </div>
 
@@ -148,7 +148,7 @@
               Stock No:
             </div>
             <div class="controls">
-              <input type="text" name="stockNumber" class="input-large" ng-model="newlog.stockNumber" placeholder="Stock Number">
+              <input type="number" name="stockNumber" class="input-large" ng-model="newlog.stockNumber" required>
             </div>
           </div>
 
@@ -157,7 +157,7 @@
               Tree Number:
             </div>
             <div class="controls">
-              <input type="text" name="treeNumber" class="input-large" ng-model="newlog.treeNumber" placeholder="Tree Number">
+              <input type="number" name="treeNumber" class="input-large" ng-model="newlog.treeNumber" required>
             </div>
           </div>
 
@@ -166,7 +166,7 @@
               Log Number:
             </div>
             <div class="controls">
-              <input type="text" name="logNumber" class="input-large" ng-model="newlog.logNumber" placeholder="Log Number">
+              <input type="number" name="logNumber" class="input-large" ng-model="newlog.logNumber" required>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
             </div>
             <div class="controls">
               <select id="speciesId" class='input-large' name="speciesId" ng-model="newlog.speciesId"
-                  ng-options='species.id as species.name for species in speciesList'>
+                  ng-options='species.id as species.trade for species in speciesList'>
               </select>
             </div>
           </div>
@@ -192,9 +192,53 @@
                  <input type="number" name="logNumber" class="input-small"
                  ng-model="newlog.db2" placeholder="DB2">
                 <input type="number" name="logNumber" class="input-small"
-                 ng-model="newlog.db3" placeholder="DB3">
+                 ng-model="newlog.db" placeholder="DB">
               </div>
               
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label">
+              Diameter (DT):
+            </div>
+            <div class="controls">
+              <div class="">
+                <input type="number" name="logNumber" class="input-small"
+                 ng-model="newlog.dt1" placeholder="DT1">
+                 <input type="number" name="logNumber" class="input-small"
+                 ng-model="newlog.dt2" placeholder="DT2">
+                <input type="number" name="logNumber" class="input-small"
+                 ng-model="newlog.dt" placeholder="DT">
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label">
+              Length:
+            </div>
+            <div class="controls">
+              <input type="number" name="lenght" class="input-large" ng-model="newlog.lenght" required>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label">
+              Defect:
+            </div>
+            <div class="controls">
+              <input type="text" name="defect" class="input-large" ng-model="newlog.defect">
+            </div>
+          </div>
+
+          <div class="control-group">
+            <div class="control-label">
+              Grade:
+            </div>
+            <div class="controls">
+              <input type="text" name="grade" class="input-large" ng-model="newlog.grade">
             </div>
           </div>
 
