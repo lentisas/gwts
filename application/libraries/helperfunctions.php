@@ -337,7 +337,7 @@ class HelperFunction extends Eloquent {
         }
     }
 
-    public static function get_week_range($date){
+   /* public static function get_week_range($date){
         $range = [];
         $the_date = new DateTime($date);
         if($the_date->format('w') == 0){
@@ -405,6 +405,6 @@ class HelperFunction extends Eloquent {
         }
         
         return $range;
-    }
+    }*/
  
 }
