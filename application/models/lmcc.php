@@ -9,35 +9,23 @@ class Lmcc extends Eloquent{
 			$inputs = array("reference_number" => $client_data->referenceNumber, 
 							"company_id" => $client_data->companyId, 
 							"forest_district_id" => $client_data->forestDistrictId, 
-							"lif_id" => $client_data->lifId, 
-							"drivers_name" => $client_data->driversName, 
+							"lifReference" => $client_data->lifReference, 
+							"driverName" => $client_data->driverName, 
 							"vehicle_number" => $client_data->vehicleNumber, 
 							"destination" => $client_data->destination, 
 							"check_point" => $client_data->checkPoint, 
-							"sawmill" => $client_data->sawmill, 
-							"fsd_officer_name" => $client_data->fsdOfficerName, 
-							"issue_date" => $client_data->issueDate, 
-							"expiry_date" => $client_data->expiryDate, 
-							"property_mark_agent_name" => $client_data->propertyMarkAgentName, 
-							"tidd_officer_name" => $client_data->tiddOfficerName, 
-							"tidd_officer_number" => $client_data->tiddOfficerNumber,
-							"lmccDetails" => $client_data->lmccDetails 
+							"sawmill" => $client_data->sawmill,
+							"lmccDetails" => $client_data->logs 
 							);
 			$rules = array("reference_number" => "required|max:128", 
 							"company_id" => "required|numeric", 
 							"forest_district_id" => "required|numeric", 
-							"lif_id" => "required|numeric", 
-							"drivers_name" => "required|max:128", 
+							"lifReference" => "required", 
+							"driverName" => "required|max:128", 
 							"vehicle_number" => "required|max:128", 
 							"destination" => "required|max:128", 
 							"check_point" => "required|max:128", 
-							"sawmill" => "required|max:128", 
-							"fsd_officer_name" => "required|max:128", 
-							"issue_date" => "required", 
-							"expiry_date" => "required", 
-							"property_mark_agent_name" => "required|max:128", 
-							"tidd_officer_name" => "required|max:128", 
-							"tidd_officer_number" => "required|max:128",
+							"sawmill" => "required|max:128",
 							"lmccDetails" => "required" 
 							);
 
@@ -49,24 +37,24 @@ class Lmcc extends Eloquent{
 			$arr["reference_number"] = $client_data->referenceNumber;
 			$arr["company_id"] = $client_data->companyId;
 			$arr["forest_district_id"] = $client_data->forestDistrictId;
-			$arr["lif_id"] = $client_data->lifId;
-			$arr["drivers_name"] = $client_data->driversName;
+			$arr["lif_ref"] = $client_data->lifReference;
+			$arr["drivers_name"] = $client_data->driverName;
 			$arr["vehicle_number"] = $client_data->vehicleNumber;
 			$arr["destination"] = $client_data->destination;
 			$arr["check_point"] = $client_data->checkPoint;
 			$arr["sawmill"] = $client_data->sawmill;
-			$arr["fsd_officer_name"] = $client_data->fsdOfficerName;
-			$arr["issue_date"] = $client_data->issueDate;
-			$arr["expiry_date"] = $client_data->expiryDate;
-			$arr["property_mark_agent_name"] = $client_data->propertyMarkAgentName;
-			$arr["tidd_officer_name"] = $client_data->tiddOfficerName;
-			$arr["tidd_officer_number"] = $client_data->tiddOfficerNumber;
-
+			$arr["fsd_officer_name"] = "";//$client_data->fsdOfficerName;
+			$arr["issue_date"] = date('Y-m-d H:i:s');//$client_data->issueDate;
+			$arr["expiry_date"] = date('Y-m-d H:i:s');//$client_data->expiryDate;
+			$arr["property_mark_agent_name"] = "";//$client_data->propertyMarkAgentName;
+			$arr["tidd_officer_name"] = "";//$client_data->tiddOfficerName;
+			$arr["tidd_officer_number"] = "";//$client_data->tiddOfficerNumber;
+			
 			$inserted_record = DataHelper::insert_record('lmccs',$arr,'Lmcc');
 			if(!$inserted_record['success'])
 				throw new Exception($inserted_record['message']);
 
-			LmccDetail::create_lmcc_detail($inserted_record['data']['id'], $client_data->lmccDetails);
+			LmccDetail::create_lmcc_detail($inserted_record['data']['id'], $client_data->logs);
 
 			//commit transaction
             DB::connection()->pdo->commit();

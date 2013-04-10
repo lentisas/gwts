@@ -14,7 +14,7 @@ class Create_Lmcc_Details {
 			$table->engine = 'InnoDB';
 		    $table->increments('id');
 		    $table->integer('lmcc_id')->unsigned();
-		    $table->integer('tif_id')->unsigned();
+		    $table->string('tif_ref');
 		    $table->string('reserve_code', 64);	
 		    $table->string('compartment_number');	    
 		    $table->string('stock_number');

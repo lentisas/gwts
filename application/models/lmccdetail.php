@@ -5,8 +5,7 @@ class LmccDetail extends Eloquent{
 		
 		foreach ($details as $client_data) {
 			
-			$inputs = array("tif_id" => $client_data->tifId, 
-							"reserve_code" => $client_data->reserveCode, 
+			$inputs = array("tifRef" => $client_data->tifRef, 
 							"compartment_number" => $client_data->compartmentNumber, 
 							"stock_number" => $client_data->stockNumber, 
 							"tree_number" => $client_data->treeNumber, 
@@ -19,12 +18,10 @@ class LmccDetail extends Eloquent{
 							"dt2" => $client_data->dt2, 
 							"dt" => $client_data->dt, 
 							"length" => $client_data->length, 
-							"volume" => $client_data->volume, 
-							"defects" => $client_data->defects, 
+							"defects" => $client_data->defect, 
 							"grade" => $client_data->grade, 
 							);
-			$rules = array("tif_id" => "required|numeric", 
-							"reserve_code" => "required|max:128", 
+			$rules = array("tifRef" => "required", 
 							"compartment_number" => "required|max:128", 
 							"stock_number" => "required|max:128", 
 							"tree_number" => "required|max:128", 
@@ -37,7 +34,6 @@ class LmccDetail extends Eloquent{
 							"dt2" => "required", 
 							"dt" => "required", 
 							"length" => "required", 
-							"volume" => "required", 
 							"defects" => "required|max:128", 
 							"grade" => "required|max:128", 
 							);
@@ -48,8 +44,8 @@ class LmccDetail extends Eloquent{
 
 			$arr = DataHelper::create_audit_entries(HelperFunction::get_user_id());
 			$arr["lmcc_id"] = $lmcc_id;
-			$arr["tif_id"] = $client_data->tifId;
-			$arr["reserve_code"] = $client_data->reserveCode;
+			$arr["tif_ref"] = $client_data->tifRef;
+			$arr["reserve_code"] = "";//$client_data->reserveCode;
 			$arr["compartment_number"] = $client_data->compartmentNumber;
 			$arr["stock_number"] = $client_data->stockNumber;
 			$arr["tree_number"] = $client_data->treeNumber;
@@ -62,8 +58,8 @@ class LmccDetail extends Eloquent{
 			$arr["dt2"] = $client_data->dt2;
 			$arr["dt"] = $client_data->dt;
 			$arr["length"] = $client_data->length;
-			$arr["volume"] = $client_data->volume;
-			$arr["defects"] = $client_data->defects;
+			$arr["volume"] = 00;//$client_data->volume;
+			$arr["defects"] = $client_data->defect;
 			$arr["grade"] = $client_data->grade;
 
 			$inserted_record = DataHelper::insert_record('lmcc_details',$arr,'Lmcc Detail');
@@ -93,7 +89,6 @@ class LmccDetail extends Eloquent{
 							"dt2" => $client_data->dt2, 
 							"dt" => $client_data->dt, 
 							"length" => $client_data->length, 
-							"volume" => $client_data->volume, 
 							"defects" => $client_data->defects, 
 							"grade" => $client_data->grade, 
 							);
@@ -113,7 +108,6 @@ class LmccDetail extends Eloquent{
 							"dt2" => "required", 
 							"dt" => "required", 
 							"length" => "required", 
-							"volume" => "required", 
 							"defects" => "required|max:128", 
 							"grade" => "required|max:128", 
 							);
@@ -214,7 +208,7 @@ class LmccDetail extends Eloquent{
 					$arr["dt"] = HelperFunction::format_to_2_decimal_places($data->dt);
 					$arr["length"] = HelperFunction::format_to_2_decimal_places($data->length);
 					$arr["volume"] = HelperFunction::format_to_2_decimal_places($data->volume);
-					$arr["defects"] = $data->defects;
+					$arr["defect"] = $data->defects;
 					$arr["grade"] = $data->grade;
 					
 					return $arr;
