@@ -121,7 +121,7 @@
               TIF Ref No.
             </div>
             <div class="controls">
-              <input type="number" name="tifRef" class="input-large" ng-model="newlog.tifRef" required>
+              <input type="text" name="tifRef" class="input-large" ng-model="newlog.tifRef" required>
             </div>
           </div>
 
