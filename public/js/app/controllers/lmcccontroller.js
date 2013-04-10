@@ -32,6 +32,8 @@ function LMCCController ($scope, LMCC, $http) {
 	$scope.saveLMCC = function () {
 		var lmcc = new LMCC($scope.newLMCC);
 		lmcc.logs = $scope.lmccLogs;
+		lmcc.companyId = lmcc.contractor.id;
+		lmcc.forestDistrictId = lmcc.forestDistrict.id;
 		lmcc.$save(function (res) {
 			afterSave(res);
 		})
