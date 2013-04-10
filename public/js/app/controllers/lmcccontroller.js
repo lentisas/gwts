@@ -1,4 +1,4 @@
-function LMCCController ($scope, LMCC, $http) {
+function LMCCController ($scope, LMCC, $http, MSG) {
 	
 	$scope.contractors= [];
 	$scope.forestDistricts = [];
@@ -23,6 +23,7 @@ function LMCCController ($scope, LMCC, $http) {
 	}
 
 	$scope.addNewLog = function () {
+		$scope.newlog = {};
 		$('#lmcc_tabs li:eq(1) a').tab('show');
 		//console.log("gets here");
 	}
@@ -42,6 +43,7 @@ function LMCCController ($scope, LMCC, $http) {
 		lmcc.forestDistrictId = lmcc.forestDistrict.id;
 		lmcc.$save(function (res) {
 			afterSave(res);
+			console.log("sdfsdfsd");
 		})
 	}
 
@@ -49,10 +51,10 @@ function LMCCController ($scope, LMCC, $http) {
         var msg = "";
         if(res.success){
             msg = res.message;
-            MSG.show(msg,"success");
             $scope.newLMCC = {};
             $scope.lmccLogs = [];
-            $scope.newLog = {};
+            $scope.newlog = {};
+            MSG.show(msg,"success");
             //any other business
             if(callback)
                 callback();
