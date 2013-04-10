@@ -1,8 +1,8 @@
 function LMCCController ($scope, LMCC, $http) {
-
 	$scope.contractors= [];
 	$scope.forestDistricts = [];
 	$scope.lmccLogs = [];
+	$scope.lmccs = [];
 
 	function getContractors () {
 		$http.get('companies?type=contractors').success(function (res) {
@@ -13,6 +13,12 @@ function LMCCController ($scope, LMCC, $http) {
 	function getForestDistricts () {
 		$http.get('forestdistricts').success(function (res) {
 			$scope.forestDistricts = res.data;
+		})
+	}
+
+	function getLMCCs() {
+		$http.get('lmccs').success(function (res) {
+			$scope.lmccs = res.data;
 		})
 	}
 
@@ -50,8 +56,8 @@ function LMCCController ($scope, LMCC, $http) {
 			defects: log.defects,
 			grade:log.grade
 		}
-
-	$scope.lmccLogs.push(log);
+		$scope.lmccLogs.push(log);
+	}
 
 	$scope.saveLMCC = function () {
 		var lmcc = new LMCC($scope.newLMCC);
@@ -80,4 +86,5 @@ function LMCCController ($scope, LMCC, $http) {
 
 	getContractors();
 	getForestDistricts();
+
 }
