@@ -176,7 +176,7 @@
             </div>
             <div class="controls">
               <select id="speciesId" class='input-large' name="speciesId" ng-model="newlog.speciesId"
-                  ng-options='species.id as species.trade for species in speciesList'>
+                  ng-options='species.id as species.latin for species in speciesList'>
               </select>
             </div>
           </div>
