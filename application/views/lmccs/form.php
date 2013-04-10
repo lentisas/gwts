@@ -1,10 +1,10 @@
-<script type="text/javascript" src="js/app/controllers/lmcccontroller.js"></script>
-<div class="container-fluid">
+<div class="container-fluid" >
   <h3 class="page-title">
     LMCC Entry Form<small></small>
+    <a href="#lmccs" class="btn green pull-right">Back to List <i class="m-icon-swapleft m-icon-white"></i></a>
     <hr>
-  </h3>
-  <div class="row-fluid" ng-controller="LMCCController">
+    </h3>
+  <div class="row-fluid" ng-controller="LMCCController" ng-init="LoadForm()">
     <div class="tabbable" id="lmcc_tabs">
       <ul class="nav nav-tabs tab_headers" style="display:none">
         <li class="active"><a href="#lmcc_form" data-toggle="tab"> Basic Information</a></li>
@@ -211,7 +211,7 @@
                 <input type="number" name="logNumber" class="input-small"
                  ng-model="newlog.dt" placeholder="DT">
               </div>
-              
+
             </div>
           </div>
 

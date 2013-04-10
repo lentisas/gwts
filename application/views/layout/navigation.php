@@ -28,7 +28,7 @@
           </a>
           <ul class="sub">
             <li><a class="" href="#TIF">TIF</a></li>
-            <li><a class="" href="lmcc_view">LMCC</a></li>
+            <li><a class="" href="#lmccs">LMCC</a></li>
             <li><a class="" href="#">ILMCC</a></li>
             <li><a class="" href="#">LTC</a></li>
             <li><a class="" href="#">Remeasurement</a></li>

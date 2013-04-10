@@ -1,8 +1,11 @@
-function LMCCController ($scope, LMCC, $http) {
+function LMCCController ($scope, LMCC, $http, MSG, $routeParams) {
 	$scope.contractors= [];
 	$scope.forestDistricts = [];
 	$scope.lmccLogs = [];
 	$scope.lmccs = [];
+	$scope.curLMCC = '';
+
+	$scope.lmccId = $routeParams.lmccId;
 
 	function getContractors () {
 		$http.get('companies?type=contractors').success(function (res) {
@@ -16,7 +19,7 @@ function LMCCController ($scope, LMCC, $http) {
 		})
 	}
 
-	function getLMCCs() {
+	$scope.getLMCCs = function(){
 		$http.get('lmccs').success(function (res) {
 			$scope.lmccs = res.data;
 		})
@@ -28,7 +31,25 @@ function LMCCController ($scope, LMCC, $http) {
 		})
 	}
 
+	$scope.viewLmcc = function(){
+		/*console.log($scope.lmccs);
+		angular.forEach($scope.lmccs,function(lmcc){
+			if(lmcc.id == $scope.lmccId){
+				$scope.curLMCC = lmcc;
+				window.cc = lmcc;
+			}
+		})*/
+		$http({method:'GET',url:'lmccs/',params:{'id':$scope.lmccId}})
+		.success(function(res, status, headers, config){
+			$scope.curLMCC = res.data[0];
+		})
+		.error(function(res, status, headers, config){
+			alert('an error occurred');
+		});
+	}
+
 	$scope.addNewLog = function () {
+		$scope.newlog = {};
 		$('#lmcc_tabs li:eq(1) a').tab('show');
 		//console.log("gets here");
 	}
@@ -72,6 +93,7 @@ function LMCCController ($scope, LMCC, $http) {
 		lmcc.forestDistrictId = lmcc.forestDistrict.id;
 		lmcc.$save(function (res) {
 			afterSave(res);
+			console.log("sdfsdfsd");
 		})
 	}
 
@@ -79,10 +101,10 @@ function LMCCController ($scope, LMCC, $http) {
         var msg = "";
         if(res.success){
             msg = res.message;
-            MSG.show(msg,"success");
             $scope.newLMCC = {};
             $scope.lmccLogs = [];
-            $scope.newLog = {};
+            $scope.newlog = {};
+            MSG.show(msg,"success");
             //any other business
             if(callback)
                 callback();
@@ -92,8 +114,9 @@ function LMCCController ($scope, LMCC, $http) {
         }
     }
 
-	getContractors();
-	getForestDistricts();
-	getSpecies();
-	getLMCCs();
+    $scope.LoadForm = function(){
+    	getContractors();
+		getForestDistricts();
+		getSpecies();
+    }
 }

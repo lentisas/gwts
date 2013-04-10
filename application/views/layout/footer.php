@@ -48,8 +48,8 @@
         echo HTML::script("assets/js/jquery.blockui.js");
         echo HTML::script("assets/chosen-bootstrap/chosen/chosen.jquery.min.js");
         echo HTML::script("assets/uniform/jquery.uniform.min.js");
-        echo HTML::script("assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js");
-        echo HTML::script("assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js");
+     /*   echo HTML::script("assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js");
+        echo HTML::script("assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js");*/
         echo HTML::script("assets/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js");
         echo HTML::script("assets/bootstrap-datepicker/js/bootstrap-datepicker.js");
         echo HTML::script("assets/bootstrap-daterangepicker/date.js");

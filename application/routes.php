@@ -84,7 +84,7 @@ Route::delete('lmccs/(:num)',array('uses' => 'main@lmcc'));
 //lmcc_details
 Route::post('lmccdetails',array('uses' => 'main@lmccdetail'));
 Route::put("lmccdetails/(:num)",array('uses' => 'main@lmccdetail'));
-Route::get('lmccdetails',array('uses' => 'main@lmccdetails'));
+Route::get('lmccdetails/(:num)',array('uses' => 'main@lmccdetails'));
 Route::delete('lmccdetails/(:num)',array('uses' => 'main@lmccdetail'));
 
 //regions
@@ -116,6 +116,14 @@ Route::post('tucs',array('uses' => 'main@tuc'));
 Route::put("tucs/(:num)",array('uses' => 'main@tuc'));
 Route::get('tucs',array('uses' => 'main@tucs'));
 Route::delete('tucs/(:num)',array('uses' => 'main@tuc'));
+
+
+// VIEWS
+/* CASES */
+Route::get("lmcc_list", function (){return View::make("lmccs.list");});
+Route::get("lmcc_details", function (){return View::make("lmccs.details");});
+Route::get("lmcc_form", function (){return View::make("lmccs.form");});
+
 
 /*
 |--------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<script type="text/javascript" src="../js/app/controllers/lmcccontroller.js"></script>
+<!-- <script type="text/javascript" src="../js/app/controllers/lmcccontroller.js"></script> -->
 <div ng-controller="LMCCController">
 	<div class="container-fluid">
 		<h3 class="page-title">
@@ -7,21 +7,26 @@
 		<hr>
 		</h3>
 	</div>
-	<div class="span8">
+	<div class="span10"  ng-init="getLMCCs()">
+		<div class="fluid ax_top_buttons">
+            <div class="pull-right" style="margin-bottom:8px;">
+                <a class="btn blue pull-right" href="#newlmcc"><b class="icon icon-plus"></b> New LMCC</a>
+          	</div>
+        </div>
 		<div class="portlet box light-grey">
 			<div class="portlet-title">
 				<h4><i class="icon-reorder"></i>LMCC</h4>
 				<div class="tools">
 					<a class="collapse" href="javascript:;"></a>
-					<a class="config" data-toggle="modal" href="#portlet-config"></a>
-					<a class="reload" href="javascript:;"></a>
+					<!-- <a class="config" data-toggle="modal" href="#"></a>
+					<a class="reload" href="javascript:;"></a> -->
 					<a class="remove" href="javascript:;"></a>
 				</div>
 			</div>
 			<div class="portlet-body">
 				<div role="grid" class="dataTables_wrapper form-inline" id="sample_1_wrapper">
 					<div class="row-fluid">
-						<table id="sample_1" class="table table-striped table-bordered dataTable" aria-describedby="sample_1_info">
+						<table id="sample_1" class="table table-striped table-bordered dataTable">
 							<thead>
 								<tr role="row">
 									<th></th>
@@ -44,8 +49,8 @@
 									<td class="hidden-phone ">{{lmcc.units}}</td>
 									<td class="center hidden-phone ">{{lmcc.forestDistrict}}</td>
 									<td class="hidden-phone ">
-										<a href="#viewLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-eye-open"></i></a>
-										<a href="#editLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-pencil"></i></a>
+										<a href="#viewlmcc/{{lmcc.id}}" class="btn mini green-stripe">View</a>
+										<a href="#editlmcc/{{lmcc.id}}" class="btn mini purple"><i class="icon-edit"></i> Edit</a>
 									</td>
 								</tr>
 							</tbody>
