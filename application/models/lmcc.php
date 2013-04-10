@@ -199,7 +199,8 @@ class Lmcc extends Eloquent{
 							"lmccs.tidd_officer_name",
 							"lmccs.tidd_officer_number",
 							"companies.name as company",
-							"forest_districts.name as forest_district")
+							"forest_districts.name as forest_district",
+							"forest_districts.locality_mark as locality_mark")
 						);
 
 			$out = array_map(function($data){
@@ -219,6 +220,7 @@ class Lmcc extends Eloquent{
 					$arr["sawmill"] = $data->sawmill;
 					$arr["company"] = $data->company;
 					$arr["forestDistrict"] = $data->forest_district;
+					$arr["localityMark"] = $data->locality_mark;
 					$arr["fsdOfficerName"] = $data->fsd_officer_name;
 					$arr["issueDate"] = HelperFunction::format_date_to_client($data->issue_date);
 					$arr["expiryDate"] = HelperFunction::format_date_to_client($data->expiry_date);
