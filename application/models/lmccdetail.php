@@ -161,6 +161,7 @@ class LmccDetail extends Eloquent{
 			$filter_array["lmcc_details.lmcc_id"] = $lmcc_id;
 			
 			$query_result = DB::table('lmcc_details')
+							->join('species','lmcc_details.species_id','=','species.id')
 							->where(function($query) use ($filter_array){				
 									$query = DataHelper::filter_data($query,"lmcc_details.lmcc_id",$filter_array,"int");
 				});
@@ -185,7 +186,10 @@ class LmccDetail extends Eloquent{
 							"lmcc_details.length",
 							"lmcc_details.volume",
 							"lmcc_details.defects",
-							"lmcc_details.grade")
+							"lmcc_details.grade",
+							"species.latin",
+							"species.trade",
+							"species.species_code")
 						);
 
 			$out = array_map(function($data){
@@ -210,6 +214,8 @@ class LmccDetail extends Eloquent{
 					$arr["volume"] = HelperFunction::format_to_2_decimal_places($data->volume);
 					$arr["defect"] = $data->defects;
 					$arr["grade"] = $data->grade;
+					$arr["specieName"] = $data->latin;
+					$arr["specieCode"] = $data->species_code;
 					
 					return $arr;
 				},$result);
