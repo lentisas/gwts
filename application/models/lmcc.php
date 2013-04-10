@@ -166,6 +166,8 @@ class Lmcc extends Eloquent{
 				$filter_array["lmccs.reference_number"] = "%".$client_data["referenceNumber"]."%";
 
 			$query_result = DB::table('lmccs')
+						->join('forest_districts','lmccs.forest_district_id','=','forest_districts.id')
+						->join('companies','lmccs.company_id','=','companies.id')
 						->where(function($query) use ($filter_array){				
 							$query = DataHelper::filter_data($query,"lmccs.id",$filter_array,"int");
 							$query = DataHelper::filter_data($query,"lmccs.reference_number",$filter_array,"string","like");
@@ -184,7 +186,7 @@ class Lmcc extends Eloquent{
 							"lmccs.reference_number",
 							"lmccs.company_id",
 							"lmccs.forest_district_id",
-							"lmccs.lif_id",
+							"lmccs.lif_ref",
 							"lmccs.drivers_name",
 							"lmccs.vehicle_number",
 							"lmccs.destination",
@@ -195,7 +197,9 @@ class Lmcc extends Eloquent{
 							"lmccs.expiry_date",
 							"lmccs.property_mark_agent_name",
 							"lmccs.tidd_officer_name",
-							"lmccs.tidd_officer_number")
+							"lmccs.tidd_officer_number",
+							"companies.name as company",
+							"forest_districts.name as forest_district")
 						);
 
 			$out = array_map(function($data){
@@ -207,19 +211,22 @@ class Lmcc extends Eloquent{
 					$arr["referenceNumber"] = $data->reference_number;
 					$arr["companyId"] = $data->company_id;
 					$arr["forestDistrictId"] = $data->forest_district_id;
-					$arr["lifId"] = $data->lif_id;
+					$arr["lifRef"] = $data->lif_ref;
 					$arr["driversName"] = $data->drivers_name;
 					$arr["vehicleNumber"] = $data->vehicle_number;
 					$arr["destination"] = $data->destination;
 					$arr["checkPoint"] = $data->check_point;
 					$arr["sawmill"] = $data->sawmill;
+					$arr["company"] = $data->company;
+					$arr["forestDistrict"] = $data->forest_district;
 					$arr["fsdOfficerName"] = $data->fsd_officer_name;
 					$arr["issueDate"] = HelperFunction::format_date_to_client($data->issue_date);
 					$arr["expiryDate"] = HelperFunction::format_date_to_client($data->expiry_date);
 					$arr["propertyMarkAgentName"] = $data->property_mark_agent_name;
 					$arr["tiddOfficerName"] = $data->tidd_officer_name;
 					$arr["tiddOfficerNumber"] = $data->tidd_officer_number;
-					$arr["lmccDetails"] = $data->lmcc_details;
+					$arr["logs"] = $lmcc_details;
+					$arr["units"] = count($arr['logs']);
 					
 					return $arr;
 				},$result);

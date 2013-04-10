@@ -169,7 +169,7 @@ class LmccDetail extends Eloquent{
 			$result = $query_result->get(
 						array("lmcc_details.id",
 							"lmcc_details.lmcc_id",
-							"lmcc_details.tif_id",
+							"lmcc_details.tif_ref",
 							"lmcc_details.reserve_code",
 							"lmcc_details.compartment_number",
 							"lmcc_details.stock_number",
@@ -193,7 +193,7 @@ class LmccDetail extends Eloquent{
 					$arr = array();
 					$arr["id"] = $data->id;
 					$arr["lmccId"] = $data->lmcc_id;
-					$arr["tifId"] = $data->tif_id;
+					$arr["tifRef"] = $data->tif_ref;
 					$arr["reserveCode"] = $data->reserve_code;
 					$arr["compartmentNumber"] = $data->compartment_number;
 					$arr["stockNumber"] = $data->stock_number;
