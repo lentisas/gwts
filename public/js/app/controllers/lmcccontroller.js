@@ -95,4 +95,5 @@ function LMCCController ($scope, LMCC, $http) {
 	getContractors();
 	getForestDistricts();
 	getSpecies();
+	getLMCCs();
 }

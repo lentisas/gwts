@@ -37,15 +37,15 @@
 							<tbody role="alert" aria-live="polite" aria-relevant="all">
 								<tr class="gradeX odd" ng-repeat="lmcc in lmccs">
 									<td>{{index + 1}}</td>
-									<td class=" ">{{lmcc.date}}</td>
-									<td class="hidden-phone ">{{lmcc.refNo}}</td>
-									<td class="hidden-phone ">{{lmcc.contractor}}</td>
+									<td class=" ">{{lmcc.issueDate}}</td>
+									<td class="hidden-phone ">{{lmcc.referenceNumber}}</td>
+									<td class="hidden-phone ">{{lmcc.company}}</td>
 									<td class="hidden-phone ">{{lmcc.destination}}</td>
 									<td class="hidden-phone ">{{lmcc.units}}</td>
 									<td class="center hidden-phone ">{{lmcc.forestDistrict}}</td>
 									<td class="hidden-phone ">
-										<a href="viewLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-eye-open"></i></a>
-										<a href="editLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-pencil"></i></a>
+										<a href="#viewLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-eye-open"></i></a>
+										<a href="#editLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-pencil"></i></a>
 									</td>
 								</tr>
 							</tbody>

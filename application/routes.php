@@ -76,7 +76,7 @@ Route::get('lifdetails',array('uses' => 'main@lifdetails'));
 Route::delete('lifdetails/(:num)',array('uses' => 'main@lifdetail'));
 
 //lmccs
-Route::post('lmccs',['uses' => 'main@lmcc']);
+Route::post('lmccs',array('uses' => 'main@lmcc'));
 Route::put("lmccs/(:num)",array('uses' => 'main@lmcc'));
 Route::get('lmccs',array('uses' => 'main@lmccs'));
 Route::delete('lmccs/(:num)',array('uses' => 'main@lmcc'));
