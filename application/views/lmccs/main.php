@@ -220,7 +220,7 @@
               Length:
             </div>
             <div class="controls">
-              <input type="number" name="lenght" class="input-large" ng-model="newlog.lenght" required>
+              <input type="number" name="lenght" class="input-large" ng-model="newlog.length" required>
             </div>
           </div>
 
