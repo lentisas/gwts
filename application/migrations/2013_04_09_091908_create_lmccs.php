@@ -16,7 +16,7 @@ class Create_Lmccs {
 		    $table->string('reference_number', 128)->unique();
 		    $table->integer('company_id')->unsigned();
 		    $table->integer('forest_district_id')->unsigned();
-		    $table->integer('lif_id')->unsigned();
+		    $table->string('lif_ref');
 		    $table->string('drivers_name')->nullable();
 		    $table->string('vehicle_number')->nullable();
 		    $table->string('destination')->nullable();

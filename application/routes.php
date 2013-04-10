@@ -32,13 +32,12 @@
 |
 */
 
-
+Route::controller(Controller::detect());
 
 // View Routes
 Route::get('/', array("as" => "home", "uses" => "view@home"));
 //Route::get('lmcc', array("as" => "lmcc", "uses" => "view@lmcc"));
 Route::get("lmcc_view", array("as" => "lmcc_view","uses" => "view@lmcc"));
-Route::get("lmcc_list", array("as" => "lmcc_list","uses" => "view@lmcc"));
 
 //users
 Route::post('users',array('uses' => 'main@user'));

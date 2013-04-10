@@ -1,3 +1,4 @@
+<script type="text/javascript" src="../js/app/controllers/lmcccontroller.js"></script>
 <div ng-controller="LMCCController">
 	<div class="container-fluid">
 		<h3 class="page-title">
@@ -26,8 +27,10 @@
 									<th></th>
 									<th class="sorting">Date</th>
 									<th class="hidden-phone sorting">Ref. No.</th>
+									<th class="hidden-phone sorting">Contactor</th>
+									<th class="hidden-phone sorting">Destination</th>
 									<th class="hidden-phone sorting">Units</th>
-									<th class="hidden-phone sorting">Volume</th>
+									<th class="hidden-phone sorting">Forest District</th>
 									<th class="hidden-phone sorting"></th>
 								</tr>
 							</thead>
@@ -35,9 +38,11 @@
 								<tr class="gradeX odd" ng-repeat="lmcc in lmccs">
 									<td>{{index + 1}}</td>
 									<td class=" ">{{lmcc.date}}</td>
-									<td class="hidden-phone "><a href="mailto:shuxer@gmail.com">{{lmcc.refNo}}</a></td>
+									<td class="hidden-phone ">{{lmcc.refNo}}</td>
+									<td class="hidden-phone ">{{lmcc.contractor}}</td>
+									<td class="hidden-phone ">{{lmcc.destination}}</td>
 									<td class="hidden-phone ">{{lmcc.units}}</td>
-									<td class="center hidden-phone ">{{lmcc.volume}}</td>
+									<td class="center hidden-phone ">{{lmcc.forestDistrict}}</td>
 									<td class="hidden-phone ">
 										<a href="viewLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-eye-open"></i></a>
 										<a href="editLMCC/{{lmcc.id}}" class="ax_grid_action_butttons"><i class="icon icon-pencil"></i></a>

@@ -8,10 +8,10 @@ class MyValidator extends Eloquent{
 	 * @param  [array] $rules [array containing rules to to validate against]
 	 * @return [object]        [validation object]
 	 */
-	public static function validate_user_input($input,$rules,$messages=""){ 
+	public static function validate_user_input($input,$rules){ 
       try{
       		 
-	        $validation =  Validator::make($input,$rules,$messages);
+	        $validation =  Validator::make($input,$rules);
 	        return $validation;
 
      	}catch(Exception $e){
